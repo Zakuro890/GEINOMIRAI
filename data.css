@@ -1,0 +1,236 @@
+
+
+/*３本バー（ハンバーガー）アイコン設定----------------------------------*/
+/*３本バーを囲むブロック*/
+#menubar_hdr {
+	position: fixed;z-index: 101;
+	cursor: pointer;
+	right: 30px;			/*右からの配置場所指定*/
+	top: 30px;				/*上からの配置場所指定*/
+	padding: 16px 14px;		/*上下、左右への余白*/
+	width: 46px;			/*幅（３本バーが出ている場合の幅になります）*/
+	height: 46px;			/*高さ*/
+	display: flex;					/*flexボックスを使う指定*/
+	flex-direction: column;			/*子要素（３本バー）を縦並びにする*/
+	justify-content: space-between;	/*並びかたの種類の指定*/
+	background: rgba(0,0,0,0.9);	/*背景色*/
+	border-radius: 50%;				/*円形にする*/
+	z-index: 4;
+}
+
+/*バー１本あたりの設定*/
+#menubar_hdr span {
+	display: block;
+	transition: 0.3s;	/*アニメーションにかける時間。0.3秒。*/
+	border-top: 1.5px solid #fff;	/*線の幅、線種、色*/
+}
+
+/*×印が出ている状態の設定。※１本目および２本目のバーの共通設定。*/
+#menubar_hdr.ham span:nth-of-type(1),
+#menubar_hdr.ham span:nth-of-type(3) {
+	transform-origin: center center;	/*変形の起点。センターに。*/
+	width: 20px;						/*バーの幅*/
+}
+
+/*×印が出ている状態の設定。※１本目のバー。*/
+#menubar_hdr.ham span:nth-of-type(1){
+	transform: rotate(45deg) translate(3.8px, 5px);	/*回転45°と、X軸Y軸への移動距離の指定*/
+}
+
+/*×印が出ている状態の設定。※３本目のバー。*/
+#menubar_hdr.ham span:nth-of-type(3){
+	transform: rotate(-45deg) translate(3.8px, -5px);	/*回転-45°と、X軸Y軸への移動距離の指定*/
+}
+
+/*×印が出ている状態の設定。※２本目のバー。*/
+#menubar_hdr.ham span:nth-of-type(2){
+	display: none;	/*２本目は使わないので非表示にする*/
+}
+
+
+/*メニューブロック---------------------------------------------------*/
+
+/*メニューブロック設定
+---------------------------------------------------------------------------*/
+#menubar a {display: block;text-decoration: none;}
+#menubar ul {list-style: none;margin: 0;padding: 0;}
+#menubar {display: none;}
+#menubar.d-b, #menubar_hdr.d-b {display: block;}
+#menubar.d-n, #menubar_hdr.d-n {display: none;}
+
+#menubar {
+	position: fixed;overflow: auto;z-index: 100;
+	left: 0px;top: 0px;
+	width: 100%;
+	height: 100%;
+	padding: 100px 20px 20px;			/*ブロック内の余白。上、左右、下。*/
+	background: rgba(0,0,0,0.9);		/*背景色。0,0,0は黒の事で0.9は色が90%出た状態。*/
+	text-align: center;					/*内容をセンタリング*/
+	animation: animation1 0.2s both;	/*animation.cssのanimation1を実行する。0.2sは0.2秒の事。*/
+	color: #fff;	/*文字色*/
+}
+
+/*メニュー一個あたり*/
+#menubar nav a {
+	text-decoration: none;display: block;
+	background: rgba(0,0,0,0.5);	/*背景色。0,0,0は黒のことで0.5は色が50%出た状態。*/
+	border: 1px solid rgba(255,255,255,0.3);	/*枠線の幅、線種、色。255,255,255は白のことで0.3は色が30%出た状態。*/
+	color: #fff;		/*文字色*/
+	padding: 0.5rem;	/*余白*/
+	margin: 0.5rem 0;	/*メニューの外側に空けるスペース。上下、左右。*/
+	border-radius: 5px;	/*角を丸くする指定*/
+}
+
+/*マウスオン次*/
+#menubar nav a:hover {
+	background: rgba(0,0,0,0.9);	/*背景色。透明度を変更して濃くします。*/
+	border: 1px solid rgba(255,255,255,0.9);	/*枠線。透明度を変更して濃くします。*/
+}
+
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
+
+	#menubar {
+		width: 100%;		/*メニュー幅を上書き*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*メニュー１個あたりの設定*/
+#menubar a {
+	color: inherit;
+	padding: 10px;		/*メニュー内の余白*/
+}
+/* ----------------------------------------------------------- */
+
+/*mainブロック設定
+---------------------------------------------------------------------------*/
+/*mainブロックの設定*/
+main {
+	margin: 2rem 0;	/*ブロックの外側（上下、左右）に空けるスペース*/
+}
+
+/*main-contents-partsの設定*/
+.main-contents-parts {
+	margin-bottom: 30px;		/*ボックスの下に空けるスペース。sub-contents-partsとの間の余白です。*/
+}
+
+	/*画面幅900px以上の追加指定*/
+	@media screen and (min-width:900px) {
+
+	/*カラムで使う為の指定*/
+	main.column-parts {
+		display: flex;	/*flexボックスを使う指定*/
+		justify-content: space-between;	/*並びかたの種類の指定*/
+		gap: 2rem;						/*main-contents-partsとsub-contents-partsの間のマージン的な隙間*/
+	}
+	
+	/*main-contents-partsの設定*/
+	.main-contents-parts {
+		margin-bottom: 0;
+		order: 2;			/*並び順。数字の小さい順番に表示されます。*/
+		flex: 1;
+	}
+	
+	/*.sub-contents-parts*/
+	.sub-contents-parts {
+		width: 230px;	/*幅*/
+		background-color: aqua;
+	}
+
+	/*1つ目のsub-contents*/
+	.sub-contents-parts:nth-child(2) {
+		order: 1;	/*並び順。数字の小さい順番に表示されます。*/
+	}
+	
+	}/*追加指定ここまで*/
+
+
+ /*スライドショーのキーフレーム設定
+---------------------------------------------------------------------------*/
+@keyframes slide1-parts {
+	0% {opacity: 1;}
+	25%{opacity: 1;}
+	35%{opacity: 0;}
+	90% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes slide2-parts {
+	0% {opacity: 0;}
+	25% {opacity: 0;}
+	35% {opacity: 1;}
+	60% {opacity: 1;}
+	70% {opacity: 0;}
+	100% {opacity: 0;}
+}
+@keyframes slide3-parts {
+	0% {opacity: 0;}
+	60% {opacity: 0;}
+	70% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+
+/*スライドショーの設定
+---------------------------------------------------------------------------*/
+/*スライドショー画像を囲むブロック*/
+.mainimg-css-parts {
+	position: relative;
+}
+
+/*画像１枚あたりの共通設定*/
+.slide1-parts,
+.slide2-parts,
+.slide3-parts {
+	width: 100%;height: auto;
+	animation-duration: 12s;	/*実行する時間。「s」は秒の事。*/
+	animation-iteration-count:infinite;		/*実行する回数。「infinite」は無限に繰り返す意味。*/
+	position: absolute;left:0px;top:0px;
+	animation-fill-mode: both;
+	animation-delay: 1s;	/*1秒してからアニメーションを開始。初動にガタつきが出やすいので、少しでもふせぐ為。*/
+}
+
+/*slide1-partsへの追加設定。*/
+.slide1-parts {
+	position: relative;
+	animation-name: slide1-parts;	/*上で設定しているキーフレーム（keyframes）の名前*/
+}
+
+/*slide2-partsへの追加設定*/
+.slide2-parts {
+	animation-name: slide2-parts;	/*上で設定しているキーフレーム（keyframes）の名前*/
+}
+
+/*slide3-partsへの追加設定*/
+.slide3-parts {
+	animation-name: slide3-parts;	/*上で設定しているキーフレーム（keyframes）の名前*/
+}
+.split{
+    display: table;
+    width: 100%;    
+}
+.split-item{
+    display: table-cell;
+    padding: 80px;
+    width: 20%;
+}
+.split-left{
+    position: relative;
+}
+.split-left__inner{
+    height: 100%;
+    position: fixed;
+    width: 20%;
+	font-size: 40px;
+	font-family: "Shippori Mincho", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+.split-right{
+background-image:url(img/img01.jpg);
+}
+.split-right__inner{
+	height: 8000px;
+}

@@ -16,7 +16,7 @@ $(function() {
 $(function() {
 	$('#menubar a[href^="#"]').click(function() {
 		$('#menubar').removeClass('d-b');
-		$('#menubar_hdr').removeClass('ham');
+		$('#menubar').removeClass('ham');
 	});
 });
 
@@ -106,3 +106,5 @@ particlesJS("particles-js", {
   },
   "retina_detect":false
 });
+
+

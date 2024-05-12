@@ -28,11 +28,13 @@ html,body {height: 100%;}
   z-index:-1;/*描画を一番下に*/
   width: 100%;
   height: 100%;
+  background-color:#FEE7E7;/*背景色*/
 }
 /* スライドショーの設定 --------------------------------------------------*/
 #slider {
   width: 100%;
   height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  z-index: 2;
 }
 
 #slider a{
@@ -44,7 +46,7 @@ a:active{
 	text-decoration: none;
 }
 
-#slider h1{
+.TextTyping{
 	position: absolute;
 	z-index: 2;
 	top: 50%;
@@ -55,23 +57,63 @@ a:active{
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	color: black;
+	opacity: 0.7;
 }
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+	content: "|";
+	animation: typinganime .8s ease infinite;
+  }
+  
+  @keyframes typinganime{
+	from{opacity:0}
+	to{opacity:1}
+  }
 
 .wrapper{
 	position: relative;
 }
 
+/*縦書き用の設定
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+.title-bg {
+	display: flex;				/*flexボックスを使う指定*/
+	justify-content: center;	/*並びかたの種類の指定*/
+  z-index: 3;
+  background:  black;
+}
+
+/*ボックス内のh2*/
+.title-bg h2 {
+	display: flex;			/*flexボックスを使う指定*/
+	flex-direction: column;	/*縦並びにする指定*/
+	align-items: center;	/*垂直揃えの指定。天地中央に配置されるように。*/
+  color:white;
+}
+
+/*縦書きにする指定*/
+.title-bg h2 .tate {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+  font-size: 2.1rem;
+}
+
+/*横書きで使う際の指定*/
+.title-bg h2 .yoko {
+	margin-top: 1rem;	/*上に空けるスペース*/
+	font-size: 0.7em;	/*文字サイズ。親要素の40%。*/
+}
 
 /* ------------------------------------------------------------- */
 
-#introduction{
+.introduction{
+  /* position: relative; */
 	width: 100%;
-	height: 300px;
-	background:  #1d1b1b;
+	background:  black;
 	z-index: 3;
 }
-#introduction p{
-	padding: 300px 0;	
+.introduction p{	
 	text-align: center;
 	color: #fff;
 }
@@ -145,6 +187,23 @@ a:active{
 	color: #fff;	/*文字色*/
 }
 
+/*メニュー一個あたり*/
+#menubar nav a {
+	text-decoration: none;display: block;
+	background: rgba(0,0,0,0.5);	/*背景色。0,0,0は黒のことで0.5は色が50%出た状態。*/
+	border: 1px solid rgba(255,255,255,0.3);	/*枠線の幅、線種、色。255,255,255は白のことで0.3は色が30%出た状態。*/
+	color: #fff;		/*文字色*/
+	padding: 0.5rem;	/*余白*/
+	margin: 0.5rem 0;	/*メニューの外側に空けるスペース。上下、左右。*/
+	border-radius: 5px;	/*角を丸くする指定*/
+}
+
+/*マウスオン次*/
+#menubar nav a:hover {
+	background: rgba(0,0,0,0.9);	/*背景色。透明度を変更して濃くします。*/
+	border: 1px solid rgba(255,255,255,0.9);	/*枠線。透明度を変更して濃くします。*/
+}
+
 	/*画面幅900px以上の追加指定*/
 	@media screen and (min-width:900px) {
 
@@ -160,7 +219,14 @@ a:active{
 	color: inherit;
 	padding: 10px;		/*メニュー内の余白*/
 }
+
 /* ----------------------------------------------------------- */
+
+
+
+
+
+
 /* メディアクエリの実装 */
 @media screen and (min-width:480px) { 
     /*　for iPhone Landscape　(iPhone 横)　*/
@@ -173,6 +239,21 @@ a:active{
 @media screen and (min-width:1024px) {
     /*　for PC　*/
  
+}
+
+/*メニュー内にあるソーシャルメディアのアイコン
+---------------------------------------------------------------------------*/
+ul.icons {
+	list-style: none;
+	margin: 10;padding: 0;
+	display: flex;
+	justify-content: center;
+}
+ul.icons li {
+	margin-right: 10px;	/*アイコン同士の余白*/
+}
+ul.icons i {
+	font-size: 20px;	/*Font Awesomeのアイコンサイズ*/
 }
 
 /*PAGE TOP（↑）設定
