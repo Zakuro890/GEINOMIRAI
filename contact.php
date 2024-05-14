@@ -1,0 +1,80 @@
+<?php
+var_dump($_POST);
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせフォーム</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--開閉ボタン（ハンバーガーアイコン）-->
+<div id="menubar_hdr">
+  <span></span><span></span><span></span>
+<!--/ menubar_hdr--></div>
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">お問い合わせフォーム</h2>
+  </div>
+<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+<form class="space-y-6" action="confirm.php" method="POST">
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+      お名前 *
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="山田太郎" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+  </div>
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2 " for="email">
+      メールアドレス *
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="email@example.com" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+  </div>
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+      お問い合わせ内容 *
+    </label>
+    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="お問い合わせ内容を入力してください" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"></textarea>
+  </div>
+  <div class="flex justify-center">
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-20 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">
+      確認画面へ
+    </button>
+    
+  </div>
+</div>
+</div>
+</form>
+
+  <!--開閉ブロック-->
+<div id="menubar">
+
+  <nav>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="#">メニュー</a></li>
+    <li><a href="#">メニュー</a></li>
+    <li><a href="#">メニュー</a></li>
+    <li><a href="#">お問い合わせ</a></li>
+  <ul class="icons">
+    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+    <li><a href="#"><i class="fab fa-line"></i></a></li>
+    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+  </ul>
+  </nav>
+  
+  </div>
+  
+  <!--/#menubar-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/form.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+</body>
+</html>

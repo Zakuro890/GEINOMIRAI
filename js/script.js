@@ -1,34 +1,38 @@
-//ハンバーガーメニューをクリックした際の処理
+// ハンバーガーメニューをクリックした際の処理
 $(function() {
-	$('#menubar_hdr').click(function() {
-		$(this).toggleClass('ham');
+  $('#menubar_hdr').click(function() {
+      $(this).toggleClass('ham');
 
-			if($(this).hasClass('ham')) {
-				$('#menubar').addClass('d-b');
-			} else {
-				$('#menubar').removeClass('d-b');
-			}
+      if ($(this).hasClass('ham')) {
+          $('#menubar').addClass('d-b');
+          $('body').css('overflow', 'hidden'); // Disable scrolling
+      } else {
+          $('#menubar').removeClass('d-b');
+          $('body').css('overflow', 'auto'); // Enable scrolling
+      }
 
-	});
+  });
 });
 
 // 同一ページへのリンクの場合に開閉メニューを閉じる処理
 $(function() {
-	$('#menubar a[href^="#"]').click(function() {
-		$('#menubar').removeClass('d-b');
-		$('#menubar').removeClass('ham');
-	});
+  $('#menubar a[href^="#"]').click(function() {
+      $('#menubar').removeClass('d-b');
+      $('#menubar').removeClass('ham');
+      $('body').css('overflow', 'auto'); // Enable scrolling
+  });
 });
 
 
 // 汎用開閉処理
 $(function() {
-	$('.openclose').next().hide();
-	$('.openclose').click(function() {
-		$(this).next().slideToggle();
-		$('.openclose').not(this).next().slideUp();
-	});
+  $('.openclose').next().hide();
+  $('.openclose').click(function() {
+      $(this).next().slideToggle();
+      $('.openclose').not(this).next().slideUp();
+  });
 });
+
 
 //桜エフェクト
 particlesJS("particles-js", {
@@ -108,3 +112,22 @@ particlesJS("particles-js", {
 });
 
 
+$(function () {
+  // ウィンドウをスクロールしたら…
+  $(window).scroll(function () {
+      // ウィンドウの高さを取得
+      const wHeight = $(window).height();
+      // スクロールした量を取得
+      const wScroll = $(window).scrollTop();
+          // それぞれのcentering_itemクラスに対して…
+          $("centering_item").each(function () {
+              // それぞれのcentering_itemクラスのウィンドウからの高さを取得
+              const bPosition = $(this).offset().top;
+              // スクロールした量が要素の高さを上回ったら
+              // その数値にウィンドウの高さを引き、最後に200pxを足す
+          if (wScroll > bPosition - wHeight + 200) {
+              $(this).addClass("fadeIn");
+          }
+      });
+  });
+});

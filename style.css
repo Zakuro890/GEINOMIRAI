@@ -16,13 +16,6 @@
 ---------------------------------------------------------------------------*/
 html,body {height: 100%;}
 
-
-.icon::before {
-	font-family: "Font Awesome 5 Free"; /*←ココ！！！！！！！*/
-	font-weight: 900;
-	content: "\f007";
-  }
-
 #particles-js{ 
   position:fixed;/*描画固定*/
   z-index:-1;/*描画を一番下に*/
@@ -74,14 +67,53 @@ a:active{
 	position: relative;
 }
 
+.scrollDown{
+	position: absolute;
+	bottom: 90px;
+	right: 50%;
+	animation: scrollDown 1s ease-in-out infinite;
+  }
+  @keyframes scrollDown{
+	0% {bottom: 10%}
+	50% {bottom: 15%}
+	100% {bottom: 10%}
+  }
+  .scrollDown span{
+	position: absolute;
+	left: -25px;
+	bottom: 10px;
+	font-size: 0.8em;
+	letter-spacing: 0.05em;
+	writing-mode: vertical-rl;
+  }
+  .scrollDown::before{
+	position: absolute;
+	content: "";
+	width: 1px;
+	height: 20px;
+	background-color: #333;
+	bottom: 0;
+	right: -6px;
+	transform: skew(-30deg);
+  }
+  .scrollDown::after{
+	position: absolute;
+	content: "";
+	width: 1px;
+	height: 60px;
+	background-color: #333;
+	bottom: 0;
+	right: 0;
+  }
+
 /*縦書き用の設定
 ---------------------------------------------------------------------------*/
 /*ボックス全体*/
 .title-bg {
 	display: flex;				/*flexボックスを使う指定*/
 	justify-content: center;	/*並びかたの種類の指定*/
-  z-index: 3;
-  background:  black;
+  	z-index: 3;
+ 	background:  black;
 }
 
 /*ボックス内のh2*/
@@ -89,14 +121,16 @@ a:active{
 	display: flex;			/*flexボックスを使う指定*/
 	flex-direction: column;	/*縦並びにする指定*/
 	align-items: center;	/*垂直揃えの指定。天地中央に配置されるように。*/
-  color:white;
+  	color:white;
+	font-family: "Shippori Mincho", serif;
+	margin-top: 3rem;
 }
 
 /*縦書きにする指定*/
 .title-bg h2 .tate {
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-  font-size: 2.1rem;
+  	font-size: 2.1rem;
 }
 
 /*横書きで使う際の指定*/
@@ -107,16 +141,6 @@ a:active{
 
 /* ------------------------------------------------------------- */
 
-.introduction{
-  /* position: relative; */
-	width: 100%;
-	background:  black;
-	z-index: 3;
-}
-.introduction p{	
-	text-align: center;
-	color: #fff;
-}
 
 /*３本バー（ハンバーガー）アイコン設定----------------------------------*/
 /*３本バーを囲むブロック*/
@@ -139,7 +163,7 @@ a:active{
 #menubar_hdr span {
 	display: block;
 	transition: 0.3s;	/*アニメーションにかける時間。0.3秒。*/
-	border-top: 1.5px solid #fff;	/*線の幅、線種、色*/
+	border-top: 2.0px solid #fff;	/*線の幅、線種、色*/
 }
 
 /*×印が出ている状態の設定。※１本目および２本目のバーの共通設定。*/
@@ -222,9 +246,33 @@ a:active{
 
 /* ----------------------------------------------------------- */
 
+.centering_parent {
+    padding: 20px;              /* 余白指定 */
+    background-color:  black;    /* 背景色指定 */
+    height: auto;              /*高さ指定*/
+}
 
+.centering_item {
+    width: 80%;               /* 幅指定 */
+    height: 180%;               /* 高さ指定 */
+    margin:  1em auto;            /* 中央寄せ */
+	padding: auto;
+}
+.centering_item p{
+	font-size: 2vw;
+	font-weight: bold;
+	color: white;
+    transition: all 2s; /* 動きを滑らかに */
+}
+/* フェードイン用のクラス */
+.fadeIn {
+    opacity: 1;
+}
 
+.news p{
+	margin: 3em auto;
 
+}
 
 
 /* メディアクエリの実装 */
@@ -286,6 +334,7 @@ footer {
 	color: #fff;			/*文字色*/
 	text-align: center;		/*内容をセンタリング*/
 	padding: 1rem;			/*ボックス内の余白*/
+    bottom: 0; /*下に固定*/
 }
 
 /*リンクテキスト*/

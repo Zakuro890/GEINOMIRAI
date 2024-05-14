@@ -1,11 +1,12 @@
-https://www.tomioka-silk.jp/　レイアウト
-https://coco-factory.jp/ugokuweb/move02/5-6/ 桜エフェクト
-https://coco-factory.jp/ugokuweb/move01/5-1-20/ グローバルナビゲーション
-https://bindup.jp/camp/bind/12018
+レイアウト　https://www.tomioka-silk.jp/
+桜エフェクトhttps://coco-factory.jp/ugokuweb/move02/5-6/ 
+グローバルナビゲーション　https://coco-factory.jp/ugokuweb/move01/5-1-20/ 
+ヘッダーレイアウト　https://bindup.jp/camp/bind/12018　
 
-https://coco-factory.jp/ugokuweb/move01/6-1-4/ スライドショー
+スライドショー　https://coco-factory.jp/ugokuweb/move01/6-1-4/ 
 
-https://templates.microcms.io/templates/detail/de25a5ff-5731-42b0-ac35-6fafdf7ff143   microcms
+microcms　https://templates.microcms.io/templates/detail/de25a5ff-5731-42b0-ac35-6fafdf7ff143   
 
 真似るデザイン研究所　https://maneru-design-lab.net/
 フォントサイズの決定　https://typescale.com/
+類似サイト　https://www2.ntj.jac.go.jp/dglib/
