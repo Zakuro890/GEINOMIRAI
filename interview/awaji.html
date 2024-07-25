@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>淡路人形浄瑠璃の紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion:after {
+            content: '\25BC'; /* 下向き矢印 */
+            font-size: 13px;
+            color: #777;
+            transition: transform 0.4s;
+        }
+        .active:after {
+            transform: rotate(180deg); /* 矢印を180度回転 */
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">淡路人形浄瑠璃とは</a>
+        <a href="#history">歴史</a>
+        <a href="#features">特徴</a>
+        <a href="#significance">意義</a>
+        <a href="#interview">インタビュー</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">トップページ</a></li>
+            <li>></li>
+            <li><a href="../data.html">データベース</a></li>
+            <li>></li>
+            <li>淡路人形浄瑠璃</li>
+        </ul>
+
+        <h1>淡路人形浄瑠璃の紹介</h1>
+
+        <div id="about" class="section intro">
+            <div class="text">
+                <h2>淡路人形浄瑠璃とは</h2>
+                <p>淡路人形浄瑠璃（あわじにんぎょうじょうるり）は、兵庫県淡路島に伝わる伝統的な人形劇で、三味線の伴奏と語り手の語りによって演じられます。江戸時代から続くこの人形浄瑠璃は、日本の伝統芸能の一つとして重要な文化遺産となっています。</p>
+            </div>
+            <div class="image">
+                <img src="../img/244207_s.jpg" alt="淡路人形浄瑠璃の画像">
+            </div>
+        </div>
+
+        <div id="history" class="section intro">
+            <div class="image">
+                <img src="../images/awaji_ningyo_joururi_history.jpg" alt="淡路人形浄瑠璃の歴史の画像">
+            </div>
+            <div class="text">
+                <h2>淡路人形浄瑠璃の歴史</h2>
+                <p>淡路人形浄瑠璃の歴史は、江戸時代初期に遡ります。もともとは、淡路島の農村部で行われていた宗教儀式や民間伝承に基づくものが始まりです。やがて、都市部でも人気を博し、数多くの演目が作られるようになりました。特に18世紀には、その芸術性が高まり、全国的な評価を受けるようになりました。</p>
+            </div>
+        </div>
+
+        <div id="features" class="section intro">
+            <div class="text">
+                <h2>淡路人形浄瑠璃の特徴</h2>
+                <p>淡路人形浄瑠璃には以下のような特徴があります：</p>
+                <ul>
+                    <li>人形操作：一体の人形を三人の操り手が操作する「三人遣い」が特徴です。主遣い、左遣い、足遣いがそれぞれの部分を担当し、人形に命を吹き込むように動かします。</li>
+                    <li>語りと三味線：語り手（太夫）が物語を語り、三味線の伴奏が演技に深みを加えます。太夫の語りは感情豊かで、物語の世界に観客を引き込みます。</li>
+                    <li>衣装と舞台装置：人形の衣装は精巧に作られており、歴史的な服装や豪華な装飾が特徴です。また、舞台装置も細部にこだわり、物語の場面をリアルに再現します。</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="../images/awaji_ningyo_joururi_features.jpg" alt="淡路人形浄瑠璃の特徴の画像">
+            </div>
+        </div>
+
+        <div id="significance" class="section intro">
+            <div class="image">
+                <img src="../images/awaji_ningyo_joururi_significance.jpg" alt="淡路人形浄瑠璃の意義の画像">
+            </div>
+            <div class="text">
+                <h2>淡路人形浄瑠璃の意義</h2>
+                <p>淡路人形浄瑠璃は、地域の文化と伝統を象徴する重要な存在です。以下はその主な意義です：</p>
+                <ul>
+                    <li>文化遺産：淡路人形浄瑠璃は、ユネスコの無形文化遺産に登録されており、日本の伝統芸能の一つとして国内外で高く評価されています。</li>
+                    <li>教育と継承：淡路人形浄瑠璃は、次世代への伝統文化の継承と教育の場としても重要です。地域の若者たちがその技術を学び、未来に伝えています。</li>
+                    <li>観光資源：淡路人形浄瑠璃は、地域の観光資源としても大きな役割を果たしています。観光客が訪れ、地域経済の活性化にも寄与しています。</li>
+                    <li>地域の絆：淡路人形浄瑠璃の公演は、地域住民が一体となって支えるイベントであり、地域の絆を深める役割を果たしています。</li>
+                </ul>
+            </div>
+        </div>
+        <div id="video" class="section">
+            <h2>淡路人形浄瑠璃の動画</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3E91rCQEafw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div id="interview" class="section interview">
+            <h2>インタビュー</h2>
+            <button class="accordion">活動の背景と歴史</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>この芸能団体はいつ設立されましたか？設立の背景や理由を教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>私たちの団体は、江戸時代初期に設立されました。地域の信仰行事や民間伝承をもとに、淡路島の農村部で始まったのがきっかけです。その後、都市部でも人気を博し、数多くの演目が作られるようになりました。</p>
+                <p class="question"><strong>質問者：</strong>過去にどのような歴史的な出来事や変遷があったのでしょうか？</p>
+                <p class="answer"><strong>継承者：</strong>江戸時代にはその芸術性が高まり、全国的な評価を受けるようになりました。戦時中には一時中断した時期もありましたが、戦後の復興期には地域の復興と共に再開され、現在でも多くの人々に愛されています。</p>
+            </div>
+
+            <button class="accordion">伝統と現代の融合</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>伝統的な要素をどのように現代に取り入れていますか？</p>
+                <p class="answer"><strong>継承者：</strong>伝統を守りつつ、現代の技術や文化を取り入れる工夫をしています。例えば、現代の演劇や音響技術を取り入れることで、より多くの観客に楽しんでもらえるようにしています。</p>
+                <p class="question"><strong>質問者：</strong>現代の観客にも魅力的な要素を提供するために工夫していることは何ですか？</p>
+                <p class="answer"><strong>継承者：</strong>観客が楽しめるように、パフォーマンスの演出や音楽、衣装に工夫を凝らしています。また、SNSやインターネットを活用して、淡路人形浄瑠璃の魅力をリアルタイムで発信し、より多くの人々に伝えています。</p>
+            </div>
+
+            <button class="accordion">継承者の育成</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>若い世代に伝統芸能を継承させるためにどのような取り組みをしていますか？</p>
+                <p class="answer"><strong>継承者：</strong>若い世代に伝統を継承するために、地元の学校やコミュニティでワークショップを開催し、伝統的な技術や演目を教えています。また、子供たちが参加できる小さな演目やイベントも開催し、伝統文化への関心を高めています。</p>
+                <p class="question"><strong>質問者：</strong>継承者になるための条件や基準はありますか？</p>
+                <p class="answer"><strong>継承者：</strong>特定の条件や基準はありませんが、伝統を守りたいという意欲と地域への愛着が求められます。また、技術の習得や祭りの運営に積極的に関わる姿勢も重要です。</p>
+            </div>
+
+            <button class="accordion">地域とのつながり</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>地域社会との連携や協力はどのように行っていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の商店街や企業と協力し、祭りの運営や資金面での支援を受けています。また、地域住民が積極的に参加することで、祭りを通じた地域の絆が強化されています。</p>
+                <p class="question"><strong>質問者：</strong>地域の人々からどのようなサポートを受けていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の人々からは、資金提供やボランティア活動のほか、祭りの成功を祈る温かい応援の言葉を受けています。これらのサポートが、祭りの継続と発展を支えています。</p>
+            </div>
+
+            <button class="accordion">団体の活動内容</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>練習や公演、イベントなど、日常的な活動について教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>年間を通じて伝統的な技術や演目の練習を行い、祭りに向けて準備を進めています。また、地域のイベントや他の祭りにも参加し、淡路人形浄瑠璃の魅力を広める活動を行っています。</p>
+                <p class="question"><strong>質問者：</strong>団体のメンバーはどのような人々で構成されていますか？</p>
+                <p class="answer"><strong>継承者：</strong>団体のメンバーは、地元の住民を中心に、若い世代からベテランまで幅広く構成されています。皆が協力し合い、祭りの成功を目指しています。</p>
+            </div>
+
+            <button class="accordion">感動的なエピソード</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>これまでの活動で特に感動的だったエピソードはありますか？</p>
+                <p class="answer"><strong>継承者：</strong>ある年、長年参加してきたベテランのメンバーが引退する際に、後輩たちが感謝の気持ちを込めて特別な演出を行ったことがありました。観客からも大きな拍手が送られ、地域の絆を感じる感動的な瞬間でした。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+
+    <script>
+        // アコーディオンのスクリプト
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // ナビゲーションのスムーススクロール
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 画像のフェードイン
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image img');
+            const windowHeight = window.innerHeight;
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

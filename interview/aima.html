@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>相馬野馬追の紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion:after {
+            content: '\25BC'; /* 下向き矢印 */
+            font-size: 13px;
+            color: #777;
+            transition: transform 0.4s;
+        }
+        .active:after {
+            transform: rotate(180deg); /* 矢印を180度回転 */
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">相馬野馬追とは</a>
+        <a href="#history">歴史</a>
+        <a href="#features">特徴</a>
+        <a href="#significance">意義</a>
+        <a href="#interview">インタビュー</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">トップページ</a></li>
+            <li>></li>
+            <li><a href="../data.html">データベース</a></li>
+            <li>></li>
+            <li>相馬野馬追</li>
+        </ul>
+
+        <h1>相馬野馬追の紹介</h1>
+
+        <div id="about" class="section intro">
+            <div class="text">
+                <h2>相馬野馬追とは</h2>
+                <p>相馬野馬追（そうまのまおい）は、福島県相馬地方で毎年7月に行われる伝統的な祭りです。この祭りは、平安時代から続く武士の戦いの儀式に由来し、甲冑をまとった騎馬武者たちが馬を駆り、戦場絵巻を再現する壮大な行事です。</p>
+            </div>
+            <div class="image">
+                <img src="../img/IMG_75220.jpg" alt="相馬野馬追の画像">
+                <p>提供：相馬野馬追執行委員会</p>
+            </div>
+        </div>
+
+        <div id="history" class="section intro">
+            <div class="image">
+                <img src="../img/DSC_0340.jpg" alt="相馬野馬追の歴史の画像">
+                <p>提供：相馬野馬追執行委員会</p>
+            </div>
+            <div class="text">
+                <h2>相馬野馬追の歴史</h2>
+                <p>相馬野馬追の起源は平安時代に遡ります。源頼義が戦勝祈願として神前に奉納したことに始まり、以後、相馬氏によって引き継がれ、今日まで続いています。江戸時代には、藩主の相馬中村氏が保護し、地域の重要な文化行事として発展しました。</p>
+            </div>
+        </div>
+
+        <div id="features" class="section intro">
+            <div class="text">
+                <h2>相馬野馬追の特徴</h2>
+                <p>相馬野馬追には以下のような特徴があります：</p>
+                <ul>
+                    <li>甲冑姿の騎馬武者：参加者は戦国時代の甲冑をまとい、馬に乗って参加します。この姿が歴史の重みを感じさせます。</li>
+                    <li>神旗争奪戦：祭りのクライマックスで行われる神旗争奪戦は、天高く舞い上がる神旗を騎馬武者たちが奪い合う迫力満点の競技です。</li>
+                    <li>野馬追行列：鎧兜を身にまとった騎馬武者たちが行進する様子は壮観で、多くの観光客を魅了します。</li>
+                    <li>御輿渡御：神輿が町内を練り歩く儀式で、地域住民の協力により行われます。</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="../img/IMG_81740.jpg" alt="相馬野馬追の特徴の画像">
+                <p>提供：相馬野馬追執行委員会</p>
+            </div>
+        </div>
+
+        <div id="significance" class="section intro">
+            <div class="image">
+                <img src="../img/IMG_79740.jpg" alt="相馬野馬追の意義の画像">
+                <p>提供：相馬野馬追執行委員会</p>
+            </div>
+            <div class="text">
+                <h2>相馬野馬追の意義</h2>
+                <p>相馬野馬追は、地域の文化と伝統を象徴する重要な存在です。以下はその主な意義です：</p>
+                <ul>
+                    <li>文化遺産：相馬野馬追は、地域の文化遺産として重要視されています。国の重要無形民俗文化財に指定されており、次世代に継承するための活動が行われています。</li>
+                    <li>地域の絆：相馬野馬追は、地域住民が一体となって参加するイベントであり、地域の絆を深める役割を果たしています。祭りを通じて住民同士の交流が促進されます。</li>
+                    <li>観光資源：相馬野馬追は、地域の観光資源としても注目されています。多くの観光客が訪れ、地域経済の活性化にも寄与しています。</li>
+                    <li>歴史の継承：相馬野馬追は、歴史的な出来事や風習を後世に伝える重要な手段です。参加者や観客は、過去の文化や伝統に触れる機会を得ることができます。</li>
+                </ul>
+            </div>
+        </div>
+        <div id="video" class="section">
+            <h2>相馬野馬追の動画</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UmzA3QESrm4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div id="interview" class="section interview">
+            <h2>インタビュー</h2>
+            <button class="accordion">活動の背景と歴史</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>この行事はいつから始まったのですか？設立の背景や理由を教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>相馬野馬追の起源は平安時代に遡ります。源頼義が戦勝祈願として神前に奉納したことに始まり、以後、相馬氏によって引き継がれ、今日まで続いています。</p>
+                <p class="question"><strong>質問者：</strong>過去にどのような歴史的な出来事や変遷があったのでしょうか？</p>
+                <p class="answer"><strong>継承者：</strong>時代と共に形式が整い、江戸時代には相馬中村氏が保護することで地域の重要な文化行事として発展しました。昭和時代には戦争や災害の影響で一時中断しましたが、地域住民の努力により再興されました。</p>
+            </div>
+
+            <button class="accordion">伝統と現代の融合</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>伝統的な要素をどのように現代に取り入れていますか？</p>
+                <p class="answer"><strong>継承者：</strong>伝統を守りつつ、現代の技術や文化を取り入れる工夫をしています。例えば、SNSやインターネットを活用して、相馬野馬追の魅力をリアルタイムで発信し、若い世代にも興味を持ってもらえるようにしています。</p>
+                <p class="question"><strong>質問者：</strong>現代の観客にも魅力的な要素を提供するために工夫していることは何ですか？</p>
+                <p class="answer"><strong>継承者：</strong>観客が楽しめるように、パフォーマンスの演出やイベントの運営に工夫を凝らしています。また、地域の特産品を紹介するコーナーを設けるなど、祭りを通じて地域全体の魅力を伝えています。</p>
+            </div>
+
+            <button class="accordion">継承者の育成</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>若い世代に伝統文化を継承させるためにどのような取り組みをしていますか？</p>
+                <p class="answer"><strong>継承者：</strong>若い世代に伝統を継承するために、地元の学校やコミュニティでワークショップを開催し、相馬野馬追の意義や技術を教えています。また、子供たちが参加できる小さなイベントや行事も開催し、伝統文化への関心を高めています。</p>
+                <p class="question"><strong>質問者：</strong>継承者になるための条件や基準はありますか？</p>
+                <p class="answer"><strong>継承者：</strong>特定の条件や基準はありませんが、相馬野馬追に対する情熱と地域への愛着が求められます。また、祭りの運営や参加に積極的に関わる姿勢も重要です。</p>
+            </div>
+
+            <button class="accordion">地域とのつながり</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>地域社会との連携や協力はどのように行っていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の商店街や企業と協力し、祭りの運営や資金面での支援を受けています。また、地域住民が積極的に参加することで、祭りを通じた地域の絆が強化されています。</p>
+                <p class="question"><strong>質問者：</strong>地域の人々からどのようなサポートを受けていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の人々からは、資金提供やボランティア活動のほか、祭りの成功を祈る温かい応援の言葉を受けています。これらのサポートが、祭りの継続と発展を支えています。</p>
+            </div>
+
+            <button class="accordion">団体の活動内容</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>練習や公演、イベントなど、日常的な活動について教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>年間を通じて相馬野馬追の準備や練習を行い、地域のイベントや他の祭りにも参加しています。これにより、相馬野馬追の魅力を広める活動を行っています。</p>
+                <p class="question"><strong>質問者：</strong>団体のメンバーはどのような人々で構成されていますか？</p>
+                <p class="answer"><strong>継承者：</strong>団体のメンバーは、地元の住民を中心に、若い世代からベテランまで幅広く構成されています。皆が協力し合い、祭りの成功を目指しています。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+
+    <script>
+        // アコーディオンのスクリプト
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // ナビゲーションのスムーススクロール
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 画像のフェードイン
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image img');
+            const windowHeight = window.innerHeight;
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

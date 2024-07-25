@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>インタビュー</title>
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion:after {
+            content: '\25BC'; /* 下向き矢印 */
+            font-size: 13px;
+            color: #777;
+            margin-left: 10px;
+        }
+        .active:after {
+            content: "\25B2"; /* 上向き矢印 */
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>阿波踊りの紹介</h1>
+
+        <div class="info-section">
+            <h2>阿波踊りとは</h2>
+            <p>阿波踊りは、日本の徳島県で毎年8月に開催される伝統的な踊りの祭りです。伝説によれば、藩主が城の完成を祝うために民衆に酒を振る舞い、人々が酔って踊り出したのが始まりとされています。この祭りは400年以上の歴史を持ち、全国的に有名な夏祭りの一つです。参加者は、連と呼ばれるグループに分かれ、音楽に合わせて踊りながら街を練り歩きます。</p>
+            <p>阿波踊りは、時代とともに変遷を遂げ、戦後の復興期には、観光資源としても注目されるようになりました。現在では、国内外から多くの観光客が訪れ、徳島の夏の風物詩として親しまれています。</p>
+
+            <div class="image-placeholder">画像挿入場所</div>
+
+            <h2>歴史と背景</h2>
+            <p>阿波踊りの起源は、16世紀末の阿波藩の時代に遡ります。伝説によれば、藩主が城の完成を祝うために民衆に酒を振る舞い、人々が酔って踊り出したのが始まりとされています。長い歴史の中で、踊りや音楽のスタイルが洗練され、現在の形に至っています。</p>
+
+            <div class="image-placeholder">画像挿入場所</div>
+
+            <h2>踊りと音楽の特徴</h2>
+            <p>阿波踊りは、男性踊りと女性踊りの二つのスタイルに大別されます。男性踊りは力強くダイナミックな動きが特徴で、女性踊りは優雅でしなやかな動きを見せます。音楽は、三味線、太鼓、鉦鼓（しょうこ）、笛などの伝統的な楽器で構成され、祭りの賑やかな雰囲気を一層引き立てます。</p>
+            <p>リズムは「エイヤットサー、ヨイヨイヨイヨイ」という掛け声と共に、シンプルながらも心地よい拍子が繰り返され、見る人、踊る人すべてが一体となる高揚感を生み出します。</p>
+
+            <div class="image-placeholder">画像挿入場所</div>
+
+            <h2>衣装</h2>
+            <p>踊り手たちは、色鮮やかな浴衣を着用し、女性は編笠をかぶり、男性はハチマキを巻いて踊ります。衣装は連ごとにデザインが異なり、それぞれの個性を表現しています。</p>
+
+            <div class="image-placeholder">画像挿入場所</div>
+        </div>
+
+        <div class="interview-section">
+            <h1>インタビュー</h1>
+            <h3>財部源治さん(仮名)</h3>
+
+            <button class="accordion">お時間を頂きありがとうございます。まず、自己紹介をお願いできますか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span>お時間を頂きありがとうございます。まず、自己紹介をお願いできますか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> こちらこそ、ありがとうございます。私は財部源治(仮名)と申します。現在、阿波踊りのとある団体で活動しています。</p>
+            </div>
+
+            <button class="accordion">この芸能団体はいつ設立されましたか？設立の背景や理由は何ですか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> この芸能団体はいつ設立されましたか？設立の背景や理由は何ですか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 私たちの阿波踊りの団体は、1980年代に設立されました。設立の背景には、地域の伝統文化を守り、次の世代に継承するという強い思いがありました。当時、都市化が進む中で、伝統芸能が失われつつあることに危機感を抱いた地域の有志が集まり、設立に至りました。</p>
+            </div>
+
+            <button class="accordion">過去にどのような出来事や変遷があったのでしょうか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 過去にどのような出来事や変遷があったのでしょうか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 設立当初は地元の祭りでの披露が主でしたが、次第に全国的な認知度が高まり、国内外のイベントにも招かれるようになりました。1980年代には、一度活動が低迷した時期もありましたが、新たなメンバーの加入と共に、再び活気を取り戻しました。最近では、伝統を守りつつも現代的な要素を取り入れることで、若年層の関心を引き付けています。</p>
+            </div>
+
+            <button class="accordion">伝統的な要素をどのように現代に取り入れていますか？例えば、新しい振付や音楽のアレンジ、衣装のデザインなどがありますか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 伝統的な要素をどのように現代に取り入れていますか？例えば、新しい振付や音楽のアレンジ、衣装のデザインなどがありますか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 伝統を守りつつも、現代の観客の方にも楽しんでもらえるように工夫しています。例えば、伝統的な振付を基にしつつ、若者にも受け入れられるようにポップミュージックとの融合を図ったり、衣装のデザインも現代風のアレンジを加えたりしています。また、LEDライトを使った夜間公演なども取り入れ、視覚的な楽しさを追求しています。</p>
+            </div>
+
+            <button class="accordion">若い世代に伝統芸能を継承させるためにどのような取り組みをしていますか？練習や指導方法、教育プログラムなどについて教えてください。</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 若い世代に伝統芸能を継承させるためにどのような取り組みをしていますか？練習や指導方法、教育プログラムなどについて教えてください。</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 若い世代への継承は非常に重要です。そのため、小学校や中学校での出張授業やワークショップを定期的に開催しています。また、希望者には週末に特別な練習会を開き、専門的な指導を行っています。指導方法は、基本的な動きから始めて、徐々に高度な技術を教える段階的なプログラムを採用しています。</p>
+            </div>
+
+            <button class="accordion">継承者になるための条件や基準はありますか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 継承者になるための条件や基準はありますか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 特に厳しい条件や基準は設けていません。阿波踊りに対する情熱とやる気があれば、誰でも継承者になることができます。ただし、継続して練習に参加すること、そしてチームワークを大切にすることが求められます。</p>
+            </div>
+
+            <button class="accordion">地域の祭りやイベントへの参加、地域住民との交流などがあれば教えてください。</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 地域の祭りやイベントへの参加、地域住民との交流などがあれば教えてください。</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 地域の祭りやイベントには積極的に参加しています。また、地域住民との交流を深めるために、地元の商店街と協力してイベントを開催したり、地域の学校での講演やワークショップを行ったりしています。地域の人々からの応援や支援も非常に大きな力となっています。</p>
+            </div>
+
+            <button class="accordion">練習や公演、イベントなど、日常的な活動について教えてください。特に印象的だった公演や活動はありますか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 練習や公演、イベントなど、日常的な活動について教えてください。特に印象的だった公演や活動はありますか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 私たちの団体は、週に数回の練習を行っています。公演やイベントは月に数回程度ですが、特に夏祭りのシーズンには多くの公演があります。印象的だったのは、全国的なフェスティバルでの公演や、海外での文化交流イベントに参加したことです。特に、海外での公演では現地の方々の熱烈な歓迎を受け、大きな感動を覚えました。</p>
+            </div>
+
+            <button class="accordion">団体のメンバーはどのような人々で構成されていますか？</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 団体のメンバーはどのような人々で構成されていますか？</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> 団体のメンバーは、学生から社会人まで幅広い年齢層で構成されています。共通するのは、皆が阿波踊りを愛し、地域の文化を大切に思っていることです。また、メンバーの多くが家族や友人の紹介で参加しており、非常にアットホームな雰囲気が特徴です。</p>
+            </div>
+
+            <button class="accordion">最後にこれまでの活動で特に感動的だったエピソードはありますか？例えば、ある出演者の成長や、観客からの感謝の言葉などがあれば教えてください。</button>
+            <div class="panel">
+                <p class="question"><span class="questioner">質問者：</span> 最後にこれまでの活動で特に感動的だったエピソードはありますか？例えば、ある出演者の成長や、観客からの感謝の言葉などがあれば教えてください。</p>
+                <p class="answer"><span class="interviewee">財部源治さん(仮名):</span> ある若いメンバーが最初は振付を覚えるのに苦労していたのですが、毎回の練習に熱心に参加し続けた結果、大きな公演でセンターを務めるまでに成長しました。その姿を見た時、私たち指導者も非常に感動しました。また、ある高齢の観客から「若い頃に見た阿波踊りを思い出しました。ありがとう」と感謝の言葉をいただいた時は、伝統を継承する意義を改めて実感しました。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // アコーディオンのスクリプト
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

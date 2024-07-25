@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>雅楽の紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion:after {
+            content: '\25BC'; /* 下向き矢印 */
+            font-size: 13px;
+            color: #777;
+            transition: transform 0.4s;
+        }
+        .active:after {
+            transform: rotate(180deg); /* 矢印を180度回転 */
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">雅楽とは</a>
+        <a href="#history">歴史</a>
+        <a href="#features">特徴</a>
+        <a href="#significance">意義</a>
+        <a href="#interview">インタビュー</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">トップページ</a></li>
+            <li>></li>
+            <li><a href="../data.html">データベース</a></li>
+            <li>></li>
+            <li>雅楽</li>
+        </ul>
+
+        <h1>雅楽の紹介</h1>
+
+        <div id="about" class="section intro">
+            <div class="text">
+                <h2>雅楽とは</h2>
+                <p>雅楽（ががく）は、日本の伝統的な音楽と舞踊の形式で、主に神社や宮中の儀式で演奏されます。雅楽は、中国や朝鮮半島から伝来した音楽や舞踊に、日本独自の要素が加わったもので、千年以上の歴史を持っています。</p>
+            </div>
+            <div class="image">
+                <img src="../images/gagaku.jpg" alt="雅楽の画像">
+            </div>
+        </div>
+
+        <div id="history" class="section intro">
+            <div class="image">
+                <img src="../images/gagaku_history.jpg" alt="雅楽の歴史の画像">
+            </div>
+            <div class="text">
+                <h2>雅楽の歴史</h2>
+                <p>雅楽の起源は古代中国の宮廷音楽にあり、6世紀から7世紀にかけて朝鮮半島を経由して日本に伝来しました。その後、日本独自の発展を遂げ、平安時代には宮廷儀式や神社の祭礼で盛んに演奏されるようになりました。江戸時代には武家社会でも広まり、現代では日本の伝統文化として重要な役割を果たしています。</p>
+            </div>
+        </div>
+
+        <div id="features" class="section intro">
+            <div class="text">
+                <h2>雅楽の特徴</h2>
+                <p>雅楽は、以下の要素を特徴としています：</p>
+                <ul>
+                    <li>楽器：雅楽には、笙（しょう）、篳篥（ひちりき）、龍笛（りゅうてき）、琵琶（びわ）、箏（こと）、太鼓などの楽器が使われます。</li>
+                    <li>曲目：雅楽には、祭祀用の「神楽」、宮廷儀式用の「庭燎」、舞楽用の「舞楽」などがあります。</li>
+                    <li>舞踊：雅楽には、舞楽と呼ばれる伝統的な舞踊があり、楽器の演奏に合わせて優雅な動きを見せます。</li>
+                    <li>衣装：演奏者や舞踊者は、華やかな衣装を身にまとい、伝統的な装束で演奏や舞を披露します。</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="../images/gagaku_features.jpg" alt="雅楽の特徴の画像">
+            </div>
+        </div>
+
+        <div id="significance" class="section intro">
+            <div class="image">
+                <img src="../images/gagaku_significance.jpg" alt="雅楽の意義の画像">
+            </div>
+            <div class="text">
+                <h2>雅楽の意義</h2>
+                <p>雅楽は、日本の伝統文化の象徴として重要な意義を持っています。以下はその主な意義です：</p>
+                <ul>
+                    <li>文化遺産：雅楽は、世界最古の伝統音楽の一つとして、ユネスコの無形文化遺産に登録されています。</li>
+                    <li>宗教儀式：神社や宮中の儀式で演奏されることで、宗教的な儀礼を支えています。</li>
+                    <li>文化教育：雅楽は、日本の歴史や文化を学ぶ上で重要な教育資源となっています。</li>
+                    <li>国際交流：雅楽は、日本の伝統文化を世界に発信する手段として、国際交流にも貢献しています。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="interview" class="section interview">
+            <h2>インタビュー</h2>
+            <button class="accordion">活動の背景と歴史</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>この芸能団体はいつ設立されましたか？設立の背景や理由を教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>私たちの雅楽団体は、1950年代に設立されました。当時、日本の伝統文化を守り、次世代に伝えることの重要性が高まっていたため、雅楽を広めるための団体が結成されました。</p>
+                <p class="question"><strong>質問者：</strong>過去にどのような歴史的な出来事や変遷があったのでしょうか？</p>
+                <p class="answer"><strong>継承者：</strong>設立以来、私たちの団体は国内外で多くの公演を行い、雅楽の普及に努めてきました。特に、1960年代の海外公演は大きな反響を呼び、日本の文化を世界に広める一助となりました。</p>
+            </div>
+
+            <button class="accordion">伝統と現代の融合</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>伝統的な要素をどのように現代に取り入れていますか？</p>
+                <p class="answer"><strong>継承者：</strong>私たちは伝統を守りつつ、現代の音楽や演出技術を取り入れることにも挑戦しています。例えば、現代アーティストとのコラボレーションや、新しい舞台演出の導入などがあります。</p>
+                <p class="question"><strong>質問者：</strong>現代の観客にも魅力的な要素を提供するために工夫していることは何ですか？</p>
+                <p class="answer"><strong>継承者：</strong>観客が楽しめるように、パフォーマンスの演出や音楽、衣装に工夫を凝らしています。また、SNSやインターネットを活用して、雅楽の魅力をリアルタイムで発信し、より多くの人々に伝えています。</p>
+            </div>
+
+            <button class="accordion">継承者の育成</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>若い世代に伝統芸能を継承させるためにどのような取り組みをしていますか？</p>
+                <p class="answer"><strong>継承者：</strong>若い世代に伝統を継承するために、地元の学校やコミュニティでワークショップを開催し、伝統的な技術や演目を教えています。また、子供たちが参加できる小さな演目やイベントも開催し、伝統文化への関心を高めています。</p>
+                <p class="question"><strong>質問者：</strong>継承者になるための条件や基準はありますか？</p>
+                <p class="answer"><strong>継承者：</strong>特定の条件や基準はありませんが、伝統を守りたいという意欲と地域への愛着が求められます。また、技術の習得や祭りの運営に積極的に関わる姿勢も重要です。</p>
+            </div>
+
+            <button class="accordion">地域とのつながり</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>地域社会との連携や協力はどのように行っていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の商店街や企業と協力し、祭りの運営や資金面での支援を受けています。また、地域住民が積極的に参加することで、祭りを通じた地域の絆が強化されています。</p>
+                <p class="question"><strong>質問者：</strong>地域の人々からどのようなサポートを受けていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の人々からは、資金提供やボランティア活動のほか、祭りの成功を祈る温かい応援の言葉を受けています。これらのサポートが、祭りの継続と発展を支えています。</p>
+            </div>
+
+            <button class="accordion">団体の活動内容</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>練習や公演、イベントなど、日常的な活動について教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>年間を通じて伝統的な技術や演目の練習を行い、祭りに向けて準備を進めています。また、地域のイベントや他の祭りにも参加し、雅楽の魅力を広める活動を行っています。</p>
+                <p class="question"><strong>質問者：</strong>団体のメンバーはどのような人々で構成されていますか？</p>
+                <p class="answer"><strong>継承者：</strong>団体のメンバーは、地元の住民を中心に、若い世代からベテランまで幅広く構成されています。皆が協力し合い、祭りの成功を目指しています。</p>
+            </div>
+
+            <button class="accordion">感動的なエピソード</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>これまでの活動で特に感動的だったエピソードはありますか？</p>
+                <p class="answer"><strong>継承者：</strong>ある年、長年参加してきたベテランのメンバーが引退する際に、後輩たちが感謝の気持ちを込めて特別な演出を行ったことがありました。観客からも大きな拍手が送られ、地域の絆を感じる感動的な瞬間でした。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+
+    <script>
+        // アコーディオンのスクリプト
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // ナビゲーションのスムーススクロール
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 画像のフェードイン
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image img');
+            const windowHeight = window.innerHeight;
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

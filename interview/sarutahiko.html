@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>猿田彦の舞の紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+    <style>
+        .image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: background-color 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion:after {
+            content: '\25BC'; /* 下向き矢印 */
+            font-size: 13px;
+            color: #777;
+            transition: transform 0.4s;
+        }
+        .active:after {
+            transform: rotate(180deg); /* 矢印を180度回転 */
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            max-height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">猿田彦の舞とは</a>
+        <a href="#history">猿田彦大神とは</a>
+        <a href="#features">舞の特徴</a>
+        <a href="#significance">意義と役割</a>
+        <a href="#interview">インタビュー</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">トップページ</a></li>
+            <li>></li>
+            <li><a href="../data.html">データベース</a></li>
+            <li>></li>
+            <li>猿田彦の舞</li>
+        </ul>
+
+        <h1>猿田彦の舞の紹介</h1>
+
+        <div id="about" class="section intro">
+            <div class="text">
+                <h2>猿田彦の舞とは</h2>
+                <p>猿田彦の舞は、三重県伊勢市の伊勢神宮で行われる伝統的な舞です。猿田彦大神を祀る祭りの一環として行われ、この舞は神話や伝説に基づいた神聖な儀式として、古くから受け継がれています。</p>
+            </div>
+            <div class="image">
+                <img src="../images/sarutahiko_dance.jpg" alt="猿田彦の舞の画像">
+            </div>
+        </div>
+
+        <div id="history" class="section intro">
+            <div class="image">
+                <img src="../images/sarutahiko_god.jpg" alt="猿田彦大神の画像">
+            </div>
+            <div class="text">
+                <h2>猿田彦大神とは</h2>
+                <p>猿田彦大神は、日本神話に登場する神で、道開きの神として知られています。天孫降臨の際、天孫瓊瓊杵尊（ににぎのみこと）を道案内したことから、道を切り開く神、交通安全や方位を司る神とされています。猿田彦大神は伊勢神宮外宮の近くにある猿田彦神社に祀られています。</p>
+            </div>
+        </div>
+
+        <div id="features" class="section intro">
+            <div class="text">
+                <h2>舞の特徴</h2>
+                <p>猿田彦の舞は、伊勢神宮で行われる祭礼の中で奉納される神楽の一種です。特に春と秋の大祭である「春の神楽祭」「秋の神楽祭」において披露されます。舞は神話に基づき、神々が天から地上に降り立ち、道を開く様子を象徴的に表現しています。</p>
+                <ul>
+                    <li>舞台設定：猿田彦の舞は、伊勢神宮の神楽殿で行われます。舞台には神聖な空気が漂い、神職たちによって厳かに進行します。</li>
+                    <li>衣装と装飾：舞い手は、猿田彦大神を象徴する伝統的な衣装を身に着けます。白装束に赤い袴、頭には大きな鉢巻きを巻き、手には神具を持ちます。</li>
+                    <li>舞の動き：舞の動きはゆったりとし、力強く、神秘的なリズムで進行します。舞い手は神聖な空間を清め、邪悪なものを払う動作を繰り返し行います。</li>
+                    <li>音楽：舞には、笛や太鼓などの伝統的な楽器が伴奏として使われます。神聖な音楽が舞の神秘性を一層引き立てます。</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="../images/sarutahiko_dance_stage.jpg" alt="猿田彦の舞の舞台の画像">
+            </div>
+        </div>
+
+        <div id="significance" class="section intro">
+            <div class="image">
+                <img src="../images/sarutahiko_culture.jpg" alt="猿田彦の文化的意義の画像">
+            </div>
+            <div class="text">
+                <h2>意義と役割</h2>
+                <p>猿田彦の舞は、単なる踊りではなく、神への奉納と祈りを表現する重要な儀式です。道開きの神である猿田彦大神のご加護を祈り、交通安全や家庭の平安、事業の成功などを願う場でもあります。また、この舞は地域の文化と伝統を守り、次世代に継承するための重要な役割を果たしています。</p>
+                <p>猿田彦の舞は、伊勢神宮の祭礼を訪れる観光客にとっても大きな魅力となっています。観光客は、この舞を通じて日本の古代信仰や伝統文化に触れることができます。また、地域の祭りやイベントでも猿田彦の舞が披露され、地域振興にも寄与しています。</p>
+            </div>
+        </div>
+
+        <div id="interview" class="section interview">
+            <h2>インタビュー</h2>
+            <button class="accordion">活動の背景と歴史</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>この芸能団体はいつ設立されましたか？設立の背景や理由を教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>団体の設立は江戸時代中期に遡ります。当時は地域の信仰行事として始まりましたが、次第に地域住民の娯楽や団結のための行事として発展しました。</p>
+                <p class="question"><strong>質問者：</strong>過去にどのような歴史的な出来事や変遷があったのでしょうか？</p>
+                <p class="answer"><strong>継承者：</strong>戦時中には一時中断した時期もありましたが、戦後の復興期には地域の復興と共に再開されました。現在では観光資源としても重要視され、地域のシンボルとしての地位を確立しています。</p>
+            </div>
+
+            <button class="accordion">伝統と現代の融合</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>伝統的な要素をどのように現代に取り入れていますか？</p>
+                <p class="answer"><strong>継承者：</strong>伝統を守りながら、現代の技術や文化を取り入れる工夫をしています。LED照明や新しい音響技術を活用し、若い世代にもアピールしています。</p>
+                <p class="question"><strong>質問者：</strong>現代の観客にも魅力的な要素を提供するために工夫していることは何ですか？</p>
+                <p class="answer"><strong>継承者：</strong>観客が楽しめるように、パフォーマンスの演出や音楽、衣装に工夫を凝らしています。また、SNSやインターネットを活用して、祭りの様子をリアルタイムで発信し、より多くの人々に魅力を伝えています。</p>
+            </div>
+
+            <button class="accordion">継承者の育成</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>若い世代に伝統芸能を継承させるためにどのような取り組みをしていますか？</p>
+                <p class="answer"><strong>継承者：</strong>若い世代に伝統を継承するために、地元の学校やコミュニティでワークショップを開催し、伝統的な技術や演目を教えています。また、子供たちが参加できる小さな演目やイベントも開催し、伝統文化への関心を高めています。</p>
+                <p class="question"><strong>質問者：</strong>継承者になるための条件や基準はありますか？</p>
+                <p class="answer"><strong>継承者：</strong>特定の条件や基準はありませんが、伝統を守りたいという意欲と地域への愛着が求められます。また、技術の習得や祭りの運営に積極的に関わる姿勢も重要です。</p>
+            </div>
+
+            <button class="accordion">地域とのつながり</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>地域社会との連携や協力はどのように行っていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の商店街や企業と協力し、祭りの運営や資金面での支援を受けています。また、地域住民が積極的に参加することで、祭りを通じた地域の絆が強化されています。</p>
+                <p class="question"><strong>質問者：</strong>地域の人々からどのようなサポートを受けていますか？</p>
+                <p class="answer"><strong>継承者：</strong>地域の人々からは、資金提供やボランティア活動のほか、祭りの成功を祈る温かい応援の言葉を受けています。これらのサポートが、祭りの継続と発展を支えています。</p>
+            </div>
+
+            <button class="accordion">団体の活動内容</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>練習や公演、イベントなど、日常的な活動について教えてください。</p>
+                <p class="answer"><strong>継承者：</strong>年間を通じて伝統的な技術や演目の練習を行い、祭りに向けて準備を進めています。また、地域のイベントや他の祭りにも参加し、長崎くんちの魅力を広める活動を行っています。</p>
+                <p class="question"><strong>質問者：</strong>団体のメンバーはどのような人々で構成されていますか？</p>
+                <p class="answer"><strong>継承者：</strong>団体のメンバーは、地元の住民を中心に、若い世代からベテランまで幅広く構成されています。皆が協力し合い、祭りの成功を目指しています。</p>
+            </div>
+
+            <button class="accordion">感動的なエピソード</button>
+            <div class="panel">
+                <p class="question"><strong>質問者：</strong>これまでの活動で特に感動的だったエピソードはありますか？</p>
+                <p class="answer"><strong>継承者：</strong>ある年、長年参加してきたベテランのメンバーが引退する際に、後輩たちが感謝の気持ちを込めて特別な演出を行ったことがありました。観客からも大きな拍手が送られ、地域の絆を感じる感動的な瞬間でした。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+
+    <script>
+        // アコーディオンのスクリプト
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+
+        // ナビゲーションのスムーススクロール
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 画像のフェードイン
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image img');
+            const windowHeight = window.innerHeight;
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
