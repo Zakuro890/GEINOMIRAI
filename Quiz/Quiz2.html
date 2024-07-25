@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民俗芸能クイズゲーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #quiz-container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        .question-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .question-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: #0099cc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+        }
+        .question {
+            font-size: 1.8em;
+            margin: 20px 0;
+            color: #333;
+        }
+        .question-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .choices {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .choices li {
+            background: #e0e0e0;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1.2em;
+            flex: 1 1 calc(45% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .choices li:hover {
+            background: #d0d0d0;
+        }
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #555;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #top-button {
+            background-color: #0099cc;
+        }
+        #top-button:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div class="question-container">
+            <div class="question-number">Q.1</div>
+            <img src="../img/normaloni.jpg" alt="Question Image">
+            <div id="question" class="question"></div>
+        </div>
+        <ul id="choices" class="choices"></ul>
+        <div id="result"></div>
+        <div class="button-container">
+            <button id="restart">もう一度</button>
+            <button id="top-button">TOPに戻る</button>
+        </div>
+    </div>
+
+    <!-- 効果音ファイル -->
+    <audio id="correct-sound" src="../audio/correct.mp3"></audio>
+    <audio id="wrong-sound" src="../audio/wrong.mp3"></audio>
+    <audio id="all-sound" src="../audio/all.mp3"></audio>
+    <audio id="great-sound" src="../audio/great.mp3"></audio>
+    <audio id="good-sound" src="../audio/good.mp3"></audio>
+    <audio id="fight-sound" src="../audio/fight.mp3"></audio>
+    <script>
+        const quizData = [
+            {
+                question: "日本の伝統舞踊の中で、女性が演じることが多いものは何ですか？",
+                choices: ["能", "日本舞踊", "狂言", "歌舞伎"],
+                correct: "日本舞踊"
+            },
+            {
+                question: "日本の伝統芸能の中で、巨大な木偶（でく）を操るものは何ですか？",
+                choices: ["能", "文楽", "狂言", "歌舞伎"],
+                correct: "文楽"
+            },
+            {
+                question: "田植えの時期に行われる、日本の伝統的な農耕儀礼は何ですか？",
+                choices: ["盆踊り", "田楽", "おんぱく", "雅楽"],
+                correct: "田楽"
+            },
+            {
+                question: "「能」において、主役を演じる者を特に何と呼びますか？",
+                choices: ["地謡", "ワキ", "シテ", "ツレ"],
+                correct: "シテ"
+            },
+            {
+                question: "京都の五山送り火で使われる、漢字の形を模した炎の儀式は何と呼ばれますか？",
+                choices: ["大文字", "鳥居形", "舟形", "妙法"],
+                correct: "大文字"
+            },
+            {
+                question: "日本の伝統的な太鼓演奏のスタイルで、複数の太鼓を使った大規模なパフォーマンスは何ですか？",
+                choices: ["和太鼓", "笙", "琴", "笛"],
+                correct: "和太鼓"
+            },
+            {
+                question: "日本の伝統的な音楽劇で、室町時代に成立し、神道の儀礼に由来するものは何ですか？",
+                choices: ["狂言", "能", "文楽", "歌舞伎"],
+                correct: "能"
+            },
+            {
+                question: "日本の伝統的な祭りで、千代紙を使った花を飾り付けるものは何ですか？",
+                choices: ["七夕", "正月", "ひな祭り", "節分"],
+                correct: "七夕"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questionElement = document.getElementById('question');
+        const choicesElement = document.getElementById('choices');
+        const resultElement = document.getElementById('result');
+        const restartButton = document.getElementById('restart');
+        const topButton = document.getElementById('top-button');
+        const questionNumberElement = document.querySelector('.question-number');
+        const correctSound = document.getElementById('correct-sound');
+        const wrongSound = document.getElementById('wrong-sound');
+        const AllSound = document.getElementById('all-sound');
+        const GreatSound = document.getElementById('great-sound');
+        const GoodSound = document.getElementById('good-sound');
+        const FightSound = document.getElementById('fight-sound');
+
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+            questionNumberElement.textContent = `Q.${currentQuestionIndex + 1}`;
+            choicesElement.innerHTML = '';
+
+            currentQuestion.choices.forEach(choice => {
+                const li = document.createElement('li');
+                li.textContent = choice;
+                li.onclick = () => checkAnswer(li, choice);
+                choicesElement.appendChild(li);
+            });
+        }
+
+        function checkAnswer(element, choice) {
+            const currentQuestion = quizData[currentQuestionIndex];
+            if (choice === currentQuestion.correct) {
+                element.style.backgroundColor = "#4CAF50"; // 正解の場合は緑色
+                score++;
+                correctSound.play();
+            } else {
+                element.style.backgroundColor = "#f44336"; // 不正解の場合は赤色
+                wrongSound.play();
+            }
+
+            // 他の選択肢を選べないようにする
+            Array.from(choicesElement.children).forEach(li => {
+                li.onclick = null;
+                if (li.textContent === currentQuestion.correct) {
+                    li.style.backgroundColor = "#4CAF50"; // 正解を表示
+                }
+            });
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function getComment(score) {
+            if (score === quizData.length) {
+                AllSound.play();
+                return "素晴らしい！全問正解です！";
+            } else if (score >= quizData.length * 0.8) {
+                GreatSound.play();
+                return "素晴らしい！よく頑張りました！";
+            } else if (score >= quizData.length * 0.5) {
+                GoodSound.play();
+                return "良い結果です！さらに頑張りましょう！";
+            } else {
+                FightSound.play();
+                return "もっと頑張りましょう！";
+            }
+        }
+
+        function showResult() {
+            questionElement.textContent = 'クイズ終了！';
+            choicesElement.innerHTML = '';
+            resultElement.innerHTML = `あなたのスコア: ${score} / ${quizData.length}<br>${getComment(score)}`;
+            restartButton.style.display = 'block';
+            topButton.style.display = 'block';
+        }
+
+        restartButton.onclick = () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            resultElement.textContent = '';
+            restartButton.style.display = 'none';
+            topButton.style.display = 'none';
+            loadQuestion();
+        }
+
+        topButton.onclick = () => {
+            // TOPページに戻る動作
+            window.location.href = 'QuizTop.html';
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

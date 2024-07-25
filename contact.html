@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせフォーム</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .modal {
+            display: none;
+        }
+        .modal.show {
+            display: block;
+        }
+        .no-scroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="index.html">GEINOMIRAI</a></h1><!--開閉ブロック-->
+<div id="menubar">
+<nav>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="DAT.html">データベース</a></li>
+      <li><a href="company.html">掲示板</a></li>
+      <li><a href="Quiz/QuizTop.html">伝統クイズ</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+</nav>
+</div>
+<!--/#menubar-->
+</header>
+<div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+        <h2 class="text-2xl font-semibold text-center mb-6">お問い合わせフォーム</h2>
+        <p class="text-center text-gray-600 mb-6">お問い合わせの方法は、以下のフォームよりご連絡ください。<br>担当者がメールにて返信し、各種対応をご連絡いたします。</p>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSexnHISQwBFam8cuYEfRfRZNg_3Mrqc-5jGGvWN6Nc39uj5lA/formResponse" method="post">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2" for="name">お名前 <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
+                <input type="text" id="name" name="name" placeholder="例：山田 太郎" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.1921497181" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2" for="phone">電話番号 <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
+                <input type="text" id="phone" name="phone" placeholder="例：01234567890（ハイフンなし）" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.11885088" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2" for="email">メールアドレス <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
+                <input type="email" id="email" name="email" placeholder="例：sample@sample.com" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.864046591" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2" for="message">お問い合わせ内容 <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
+                <textarea id="message" name="message" placeholder="ご自由にご記入ください" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.1922750848" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label class="flex items-center">
+                    <input type="checkbox" id="agree" class="form-checkbox h-5 w-5 text-blue-600">
+                    <span class="ml-2 text-gray-700 font-medium">個人情報取扱方針に同意する</span>
+                    <button type="button" class="ml-2 text-blue-500 underline focus:outline-none" onclick="openModal()">（確認する）</button>
+                </label>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 required">送信する</button>
+            </div>
+        </form>
+    </div>
+
+   <!-- Modal -->
+<div id="modal" class="modal fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto overflow-auto max-h-screen">
+        <h3 class="text-xl font-semibold mb-4">個人情報取扱方針</h3>
+        <p class="mb-4"><strong>1. 個人情報の収集について</strong><br>
+        当サイトでは、お問い合わせフォームにGoogleフォームを使用しています。フォームをご利用いただく際に、以下の個人情報を収集する場合があります。
+        <ul class="list-disc pl-5">
+            <li>氏名</li>
+            <li>メールアドレス</li>
+            <li>電話番号</li>
+            <li>その他、お問い合わせ内容に関連する情報</li>
+        </ul>
+        </p>
+        <p class="mb-4"><strong>2. 個人情報の利用目的について</strong><br>
+        収集した個人情報は、以下の目的で利用いたします。
+        <ul class="list-disc pl-5">
+            <li>お問い合わせへの対応およびその確認</li>
+            <li>サービスの改善および向上</li>
+            <li>必要に応じたご連絡</li>
+        </ul>
+        </p>
+        <p class="mb-4"><strong>3. 個人情報の第三者提供について</strong><br>
+        取得した個人情報は、以下の場合を除き、第三者に提供することはありません。
+        <ul class="list-disc pl-5">
+            <li>ご本人の同意がある場合</li>
+            <li>法令に基づく場合</li>
+            <li>人命、身体または財産の保護のために必要な場合で、ご本人の同意を得ることが困難な場合</li>
+        </ul>
+        </p>
+        <p class="mb-4"><strong>4. Googleフォームの利用について</strong><br>
+        当サイトは、お問い合わせフォームとしてGoogleフォームを利用しています。Googleフォームで提供された個人情報はGoogleのサーバーに保存され、Googleのプライバシーポリシーに従って管理されます。Googleのプライバシーポリシーについては、こちらをご参照ください。
+        </p>
+        <p class="mb-4"><strong>5. 個人情報の管理について</strong><br>
+        当サイトは、個人情報の漏洩、紛失、改ざんを防ぐため、適切な管理措置を講じます。また、個人情報の正確性および最新性を保つために、必要な対策を実施します。
+        </p>
+        <p class="mb-4"><strong>6. 個人情報の開示・訂正・削除について</strong><br>
+        ご本人からの個人情報の開示、訂正、削除のご依頼があった場合は、速やかに対応いたします。具体的な手続きにつきましては、お問い合わせフォームからご連絡ください。
+        </p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="closeModal()">閉じる</button>
+    </div>
+</div>
+
+
+
+
+<script>
+        // フォームバリデーション
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+        // 必須項目チェック
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var emailConfirm = document.getElementById("email-confirm").value;
+        var message = document.getElementById("message").value;
+        var agree = document.getElementById("agree").checked;
+
+        if (!name || !phone || !email || !emailConfirm || !message || !agree) {
+            alert("全ての必須項目を入力し、個人情報取扱方針に同意してください。");
+            event.preventDefault();
+            return;
+        }
+
+        // メールアドレス形式チェック
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("有効なメールアドレスを入力してください。");
+            event.preventDefault();
+            return;
+        }
+
+        // メールアドレス一致チェック
+        if (email !== emailConfirm) {
+            alert("メールアドレスが一致しません。");
+            event.preventDefault();
+            return;
+        }
+    });
+    function openModal() {
+        document.getElementById('modal').classList.add('show');
+        document.body.classList.add('no-scroll');
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.remove('show');
+        document.body.classList.remove('no-scroll');
+    }
+</script>
+<!--/#contents-->
+</div>
+<ul id="footermenu">
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="DAT.html">データベース</a></li>
+  <li><a href="company.html">掲示板</a></li>
+  <li><a href="contact.html">お問い合わせ</a></li>
+</ul>
+
+<div class="footer">
+  &copy; 2024 GEINOMIRAI
+</div>
+
+</div>
+<!--/#container-->
+
+<!--開閉ボタン（ハンバーガーアイコン）-->
+<div id="menubar_hdr">
+  <span></span><span></span><span></span>
+</div>
+
+<!--jQueryの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.inview_set.js"></script>
+</body>
+</html>

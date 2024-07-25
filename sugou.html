@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>数河獅子の紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">数河獅子とは</a>
+        <a href="#history">歴史</a>
+        <a href="#features">特徴</a>
+        <a href="#significance">意義</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">トップページ</a></li>
+            <li>></li>
+            <li><a href="../data.html">データベース</a></li>
+            <li>></li>
+            <li>数河獅子</li>
+        </ul>
+
+        <h1>数河獅子の紹介</h1>
+
+        <div id="about" class="section intro">
+            <div class="text">
+                <h2>数河獅子とは</h2>
+                <p>数河獅子（すごうしし）は、岐阜県飛騨地方の伝統的な獅子舞で、特に数河地区で有名です。数河獅子は、地域の神社での祭礼や、農業の豊作を祈願するために行われる神事として重要な役割を果たしています。<br>※数河獅子は2023年9月3日、1,300年の歴史に幕を閉じました。</p>
+            </div>
+            <div class="image">
+                <img src="../img/DALL·E 2024-06-24 10.29.11 - Illustration of a traditional Japanese Shishimai (Lion Dance). The scene features a performer wearing a vibrant lion mask and ornate costume. The lion.jpg" alt="数河獅子の画像">
+            </div>
+        </div>
+
+        <div id="history" class="section intro">
+            <div class="image">
+                <img src="../images/sugo_shishi_history.jpg" alt="数河獅子の歴史の画像">
+            </div>
+            <div class="text">
+                <h2>数河獅子の歴史</h2>
+                <p>数河獅子の歴史は古く、平安時代にまで遡ると言われています。この地域では、獅子舞は悪霊を追い払うための儀式として重要視されており、地元の神社で行われる祭礼の一環として長い間続けられてきました。江戸時代には、数河獅子は地域の文化の一部として確立され、多くの人々に愛されるようになりました。</p>
+            </div>
+        </div>
+
+        <div id="features" class="section intro">
+            <div class="text">
+                <h2>数河獅子の特徴</h2>
+                <p>数河獅子には以下のような特徴があります：</p>
+                <ul>
+                    <li>舞のスタイル：数河獅子の舞は力強く、ダイナミックな動きが特徴です。舞い手は獅子頭を被り、激しく舞いながら邪気を払います。</li>
+                    <li>衣装と道具：舞い手は伝統的な衣装を着用し、獅子頭や太鼓、鉦鼓（しょうこ）などの道具を使って舞います。衣装は鮮やかな色彩で装飾され、地域の文化を反映しています。</li>
+                    <li>音楽：数河獅子の舞には、太鼓や笛、鉦鼓などの伝統的な楽器が伴奏として使用されます。リズミカルな音楽が舞の躍動感を引き立てます。</li>
+                    <li>神事の一環：数河獅子は、地元の神社で行われる祭礼の一環として行われます。特に、春の豊作祈願や秋の収穫感謝祭で重要な役割を果たしています。</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="../images/sugo_shishi_features.jpg" alt="数河獅子の特徴の画像">
+            </div>
+        </div>
+
+        <div id="significance" class="section intro">
+            <div class="image">
+                <img src="../images/sugo_shishi_significance.jpg" alt="数河獅子の意義の画像">
+            </div>
+            <div class="text">
+                <h2>数河獅子の意義</h2>
+                <p>数河獅子は、地域の文化と伝統を象徴する重要な存在です。以下はその主な意義です：</p>
+                <ul>
+                    <li>文化遺産：数河獅子は、地域の文化遺産として重要視されています。地域住民にとって大切な伝統行事であり、次世代に継承するための活動も行われています。</li>
+                    <li>農業の祈願：数河獅子は、農業の豊作を祈願するための神事として行われます。農業が主要産業である地域にとって、豊作祈願は非常に重要な意味を持ちます。</li>
+                    <li>地域の絆：数河獅子の祭りは、地域住民が一体となって参加するイベントであり、地域の絆を深める役割を果たしています。祭りを通じて住民同士の交流が促進されます。</li>
+                    <li>観光資源：数河獅子は、地域の観光資源としても注目されています。多くの観光客が訪れ、地域経済の活性化にも寄与しています。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="video" class="section">
+            <h2>数河獅子の動画</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pGBRQa2N2Zc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+
+    <script>
+        // ナビゲーションのスムーススクロール
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 画像のフェードイン
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image img');
+            const windowHeight = window.innerHeight;
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

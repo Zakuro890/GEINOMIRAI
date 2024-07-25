@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>GEINOMIRAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<!-- indexとindex_h1の２種類を用意する。初回だけindex、二回目以降はloadingアニメーションを実装していないindex_h1をリンク先として使う。 -->
+<body class="home">
+
+	<div id="loading-screen">
+	  <svg class="logo" viewBox="0 0 500 150">
+		<text x="10" y="100" font-size="79" fill="none" stroke="black" class="path">GEINOMIRAI</text>
+	  </svg>
+	</div>
+	
+	<div id="container" style="display:none;">
+	
+	<header>
+	  <h1 id="logo"><a href="index_h1.html">GEINOMIRAI</a></h1>
+	  <!--開閉ブロック-->
+	  <div id="menubar">
+		<nav>
+		  <ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="DAT.html">データベース</a></li>
+			<li><a href="Colorful-Wall.html">掲示板</a></li>
+			<li><a href="Quiz/QuizTop.html">伝統クイズ</a></li>
+			<li><a href="contact.html">お問い合わせ</a></li>
+		  </ul>
+		</nav>
+	  </div>
+	  <!--/#menubar-->
+	</header>
+	
+	<aside id="mainimg">
+	  <div class="slide slide1">
+		<div>
+		  <h1>挑戦を楽しむ。</h1>
+		  <p>地域の宝を未来へつなぐ<br>文化の継承プロジェクト</p>
+		</div>
+	  </div>
+	  <div class="slide slide2">
+		<div>
+		  <h1>継承と革新</h1>
+		  <p>伝統文化を次世代へ<br>未来を紡ぐ伝統の灯</p>
+		</div>
+	  </div>
+	  <div class="slide slide3">
+		<div>
+		  <h1>地域の心を未来</h1>
+		  <p>民俗芸能とともに歩む<br>未来への文化の架け橋</p>
+		</div>
+	  </div>
+	</aside>
+	
+	<div id="contents">
+	  <main>
+		<section class="bg1">
+		  <h2 class="c"><span class="fade-in-text">greeting</span><span class="hosoku">ご挨拶</span></h2>
+		  <div class="list-grid1">
+			<div class="list">
+			  <figure><img src="img/sample1.jpg" alt=""></figure>
+			  <div class="text">
+				<h4>ここにタイトルを入れます</h4>
+				<p>ここに説明を入れます。サンプルテキスト。</p>
+			  </div>
+			  <p class="btn"><a href="service2.html">詳しくみる</a></p>
+			</div>
+			<div class="list">
+			  <figure><img src="img/sample1.jpg" alt=""></figure>
+			  <div class="text">
+				<h4>ここにタイトルを入れます</h4>
+				<p>ここに説明を入れます。サンプルテキスト。</p>
+			  </div>
+			  <p class="btn"><a href="service2.html">詳しくみる</a></p>
+			</div>
+			<div class="list">
+			  <figure><img src="img/sample1.jpg" alt=""></figure>
+			  <div class="text">
+				<h4>ここにタイトルを入れます</h4>
+				<p>ホームページを公開。</p>
+			  </div>
+			  <p class="btn"><a href="service2.html">詳しくみる</a></p>
+			</div>
+		  </div>
+		  <!--/.list-grid1-->
+		</section>
+	
+		<section>
+		  <h2><span class="fade-in-text">What's New</span><span class="hosoku">お知らせ</span></h2>
+		  <dl class="new">
+			<dt>2024/05/19<span>その他</span></dt>
+			<dd>トップのスライドショーをcssスライドショーからjQuery+cssタイプに変更。</dd>
+			<dt>2024/05/15<span>その他</span></dt>
+			<dd>進捗がすごいです</dd>
+			<dt>20XX/00/00<span class="icon-bg2">重要</span></dt>
+			<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+			<dt>20XX/00/00<span class="icon-bg1">サービス</span></dt>
+			<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+			<dt>2024/06/13<span>その他</span></dt>
+			<dd>クイズ機能を追加。</dd>
+			<dt>2024/06/07<span class="icon-bg2">重要</span></dt>
+			<dd>ホームページを公開。</dd>
+		  </dl>
+		</section>
+	
+
+		<section>
+			<h2><span class="fade-in-text">Function</span><span class="hosoku">機能紹介</span></h2>
+			<h3>機能のご案内</h3>
+		  </section>
+
+	  </main>
+	</div>
+	<!--/#contents-->
+	
+	<ul id="footermenu">
+	  <li><a href="index.html">HOME</a></li>
+	  <li><a href="data.html">Database</a></li>
+	  <li><a href="company.html">掲示板</a></li>
+	  <li><a href="Quiz/QuizTop.html">クイズ</a></li>
+	  <li><a href="contact.html">Contact</a></li>
+	</ul>
+	
+	<div class="footer">
+	  &copy; 2024 GEINOMIRAI
+	</div>
+	
+	<!--ページの上部へ戻るボタン-->
+	<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+	
+	</div>
+	<!--/#container-->
+	
+	<!--開閉ボタン（ハンバーガーアイコン）-->
+	<div id="menubar_hdr">
+	  <span></span><span></span><span></span>
+	</div>
+	
+	<!--jQueryの読み込み-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	<!--パララックス（inview）-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+	<script src="js/jquery.inview_set.js"></script>
+	
+	<!--このテンプレート専用のスクリプト-->
+	<script src="js/main.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+	</body>
+</html>

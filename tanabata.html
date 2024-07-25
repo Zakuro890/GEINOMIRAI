@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>仙台七夕まつりの紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/interview.css" rel="stylesheet" type="text/css">
+    <style>
+        .image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#about">仙台七夕まつりとは</a>
+        <a href="#history">歴史と背景</a>
+        <a href="#events">行事</a>
+        <a href="#culture">文化的意義</a>
+        <a href="#interview">インタビュー</a>
+    </div>
+
+    <div class="container" style="margin-top: 80px;">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">トップページ</a></li>
+            <li>></li>
+            <li><a href="../data.html">データベース</a></li>
+            <li>></li>
+            <li>仙台七夕まつり</li>
+        </ul>
+
+        <h1>仙台七夕まつりの紹介</h1>
+
+        <div id="about" class="section intro">
+            <div class="text">
+                <h2>仙台七夕まつりとは</h2>
+                <p>仙台七夕まつりは、毎年8月6日から8日まで仙台市で開催される、伝統的な七夕祭りです。色とりどりの七夕飾りが街中に飾られ、多くの観光客が訪れます。この祭りは、日本の七夕行事の中でも特に華やかで有名です。</p>
+            </div>
+            <div class="image">
+                <img src="../images/sendai_tanabata.jpg" alt="仙台七夕まつりの画像">
+            </div>
+        </div>
+
+        <div id="history" class="section intro">
+            <div class="image">
+                <img src="../images/tanabata_history.jpg" alt="仙台七夕まつりの歴史の画像">
+            </div>
+            <div class="text">
+                <h2>仙台七夕まつりの歴史と背景</h2>
+                <p>仙台七夕まつりの起源は、伊達政宗が仙台城を築城した17世紀に遡ります。江戸時代には、織姫と彦星の伝説に基づいた行事として発展し、地域の人々に親しまれてきました。現在では、日本全国から観光客が訪れる一大イベントとなっています。</p>
+            </div>
+        </div>
+
+        <div id="events" class="section intro">
+            <div class="text">
+                <h2>祭りの期間と行事</h2>
+                <p>仙台七夕まつりは、8月6日から8日までの3日間にわたり開催されます。期間中、仙台市内の商店街や公共施設に七夕飾りが飾られ、夜にはライトアップも行われます。また、様々なパフォーマンスやイベントも行われ、多くの人々が訪れます。</p>
+            </div>
+            <div class="image">
+                <img src="../images/tanabata_event.jpg" alt="仙台七夕まつりの行事の画像">
+            </div>
+        </div>
+
+        <div id="culture" class="section intro">
+            <div class="image">
+                <img src="../images/tanabata_culture.jpg" alt="仙台七夕まつりの文化的意義の画像">
+            </div>
+            <div class="text">
+                <h2>文化的意義</h2>
+                <p>仙台七夕まつりは、地域の文化を象徴する重要な行事です。祭りを通じて、地域の歴史や文化が次世代に継承されるとともに、地域住民の結束が強化されます。また、観光客に対して地域の魅力を発信する場としても機能しており、地域経済の活性化にも大きく寄与しています。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+
+    <script>
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const images = document.querySelectorAll('.image img');
+            const windowHeight = window.innerHeight;
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    image.classList.add('image-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBase</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/DAT.css" rel="stylesheet">
+</head>
+<header>
+    <h1 id="logo"><a href="index.html">GEINOMIRAI</a></h1>
+</header>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8 px-4 mt-20">
+        <div class="category-container" id="category-buttons">
+            <div class="category active" data-category="all">すべて</div>
+            <div class="category inactive" data-category="festival">祭り</div>
+            <div class="category inactive" data-category="dance">舞踊</div>
+            <div class="category inactive" data-category="theater">演劇</div>
+            <div class="category inactive" data-category="another">その他</div>
+        </div>
+        <h2 class="text-2xl font-semibold text-center mb-6">データベース一覧</h2>
+        <div class="products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Products will be loaded here -->
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 GEINOMIRAI
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var products = [
+                { id: 1, category: 'festival', name: '祇園祭', image: 'img/27311747_s.jpg', link: 'interview/gion.html' },
+                { id: 2, category: 'festival', name: '相馬野馬追', image: 'img/IMG_4073.jpg', link: 'interview/aima.html', extra: '提供：相馬野馬追執行委員会' },
+                { id: 3, category: 'theater', name: '大鹿歌舞伎', image: 'img/oosika/2462763_s.jpg', link: 'interview/oosika.html' },
+                { id: 4, category: 'festival', name: '川内大綱引', image: 'img/tunahiki.jpg', link: 'interview/interview3.html' },
+                { id: 5, category: 'dance', name: '数河獅子', image: 'img/28112456_s.jpg', link: 'interview/sugou.html' },
+                { id: 7, category: 'festival', name: '鬼追い', image: 'img/04ken-onioi.jpg', link: 'interview/onioi.html' },
+                { id: 8, category: 'theater', name: '淡路人形浄瑠璃', image: 'img/4964210_s.jpg', link: 'interview/awaji.html' },
+                { id: 9, category: 'dance', name: '浦浜念仏剣舞', image: 'img/kenbai/onikenbai_s.jpg', link: 'interview/urahama.html' },
+                { id: 10, category: 'festival', name: '弥五郎どん祭り', image: 'img/DSCN1304_0.jfif', link: 'interview/interview2.html' },
+                { id: 11, category: 'dance', name: '阿波踊り', image: 'img/awa.jpg', link: 'interview/intview1.html' },
+                { id: 12, category: 'another', name: 'なまはげ', image: 'img/29977351_s.jpg', link: 'interview/namahage.html' },
+                { id: 13, category: 'dance', name: '沖縄エイサー', image: 'img/23659067_s.jpg', link: 'interview/eisa.html' },
+                { id: 14, category: 'festival', name: '尾張津島天王祭', image: 'img/1148587_s.jpg', link: 'interview/owari.html' },
+                { id: 15, category: 'festival', name: '長崎くんち', image: 'img/nagasaki/23413572_s.jpg', link: 'interview/nagasaki.html' },
+                { id: 16, category: 'theater', name: '末吉鬼神太鼓', image: 'img/kizin1.jpg', link: 'interview/kizin.html' },
+                { id: 16, category: 'dance', name: '伊予万歳', image: 'img/kizin1.jpg', link: 'interview/kizin.html' },
+                { id: 16, category: 'festival', name: '能登キリコ祭り', image: 'img/kiriko/27834231_s.jpg', link: 'interview/kiriko.html' },
+                { id: 16, category: 'theater', name: '末吉鬼神太鼓', image: 'img/kizin1.jpg', link: 'interview/kizin.html' },
+                { id: 16, category: 'theater', name: '末吉鬼神太鼓', image: 'img/kizin1.jpg', link: 'interview/kizin.html' },
+            ];
+
+            function loadProducts(category = null) {
+                $('.products').slideUp(300, function() {
+                    $(this).empty();
+                    var filteredProducts = category && category !== 'all' ? products.filter(product => product.category === category) : products;
+                    filteredProducts.forEach(product => {
+                        $('.products').append(`
+                            <div class="product p-4 border rounded-md bg-white">
+                                <a href="${product.link}">
+                                    <img src="${product.image}" alt="${product.name}">
+                                    <div class="product-name">${product.name}</div>
+                                    ${product.extra ? `<div class="product-extra">${product.extra}</div>` : ''}
+                                </a>
+                            </div>
+                        `);
+                    });
+                    $(this).slideDown(300);
+                });
+            }
+
+            loadProducts();
+
+            $('#category-buttons').on('click', '.category', function() {
+                $('.category').removeClass('active').addClass('inactive');
+                $(this).removeClass('inactive').addClass('active');
+                var category = $(this).data('category');
+                loadProducts(category);
+            });
+        });
+    </script>
+</body>
+</html>
