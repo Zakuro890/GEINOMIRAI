@@ -855,4 +855,181 @@ animationの行の「0.05s」が文字の出現のなめらかさで、大きい
   }
 
 
- 
+ /*list-half（トップページの「人気のアクティビティスポット」で使っている左右にわかれた装飾ボックス）
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+.list-half {
+    display: flex;			/*直接の子要素を横並びにする*/
+    flex-direction: column;	/*一旦縦並びにしておく*/
+}
+
+/*list-halfが続く場合に間にマージンを空ける*/
+.list-half + .list-half {
+	margin-top: 5vw;	/*画面幅100%＝100vwです。*/
+}
+
+/*h3見出し*/
+.list-half h3 {
+	margin: 0;padding: 0;
+	text-align: center;	/*テキストをセンタリング*/
+}
+
+/*h4テキスト*/
+.list-half h4 {
+	font-weight: normal;
+	margin: 0;
+	font-size: 1.5rem;				/*文字サイズを1.5倍に*/
+	color: var(--primary-color);	/*文字色。css冒頭で指定しているprimary-colorを読み込みます*/
+	position: relative;		/*下の飾り画像の基点*/
+	padding-right: 100px;	/*右に空けるスペース。テキスト右側の小さな画像と重ならないようにする為です。*/
+}
+
+/*h4テキスト右側の飾り画像*/
+.list-half h4 .kazari {
+	position: absolute;
+	right: 0px;
+	top: -3rem;
+	width: 100px;	/*画像の幅*/
+}
+
+/*左右のラインの装飾*/
+.list-half h3::before,
+.list-half h3::after {
+    content: "|";	/*このテキストを出力します*/
+    display: inline-block;
+}
+
+/*左のラインの装飾への追加設定*/
+.list-half h3::before {
+	transform: rotate(-30deg);	/*回転角度*/
+	margin-right: 0.5rem;		/*右に空けるスペース*/
+}
+
+/*右のラインの装飾への追加設定*/
+.list-half h3::after {
+	transform: rotate(30deg);	/*回転角度*/
+	margin-left: 0.5rem;		/*左に空けるスペース*/
+}
+
+/*h3テキスト内のアイコン*/
+.list-half h3 i {
+    margin-left: 0.5rem;	/*左に0.5文字分のマージンを空ける*/
+    font-size: 2rem;		/*文字サイズ２倍*/
+    color: var(--primary-color);	/*文字色。css冒頭で指定しているprimary-colorを読み込みます*/
+    opacity: 0.6;		/*透明度。60%だけ色を出す。*/
+}
+
+/*テキストブロック*/
+.list-half .text {
+    background: #fff;		/*背景色*/
+    padding: 1rem 2rem;		/*上下、左右へのブロック内の余白*/
+	margin-bottom: 30px;		/*下に空けるスペース*/
+    border-radius: 1vw;		/*角を丸くする指定。px指定でもOKです。*/
+	border: 2px solid #000000;
+}
+
+
+	/*画面幅599px以下の追加指定（並び順を変更します。数字が小さな順に並びます。）*/
+	@media screen and (max-width:599px) {
+	
+	/*h3見出し*/
+	.list-half h3 {order: 1;}
+
+	/*画像ブロック*/
+	.list-half .image {order: 2;}
+
+	/*テキストブロック*/
+	.list-half .text {order: 3;}
+	
+	}/*追加指定ここまで*/
+	
+	
+	/*画面幅600px以上の追加指定*/
+	@media screen and (min-width:600px) {
+
+	/*ボックス全体*/
+	.list-half {
+		flex-direction: row;	/*縦並びから横並びにする*/
+		justify-content: space-between;
+		
+		/*以下は変更不要*/
+		margin-right: calc(-1 * var(--global-space));
+		margin-left: calc(-1 * var(--global-space));
+	}
+
+	/*ボックス全体（※reverse用）変更不要*/
+	.list-half.reverse {
+		flex-direction: row-reverse;	/*逆向きに並べる*/
+		margin-left: calc(-1 * var(--global-space));
+	}
+
+	/*h3テキスト*/
+	.list-half h3 {
+		writing-mode: vertical-rl;	/*縦書きの指定。*/
+		text-orientation: upright;	/*文字の向き*/
+		font-size: 0.85rem;			/*文字サイズを85%*/
+		margin-top: 10vw;			/*上に空けるスペース。画面幅100%＝100vwです。*/
+	}
+	
+	/*上のラインの装飾への追加設定*/
+	.list-half h3::before {
+		transform: rotate(-60deg);	/*回転角度*/
+		margin-bottom: 0.5rem;		/*下に空けるスペース*/
+	}
+	
+	/*上のラインの装飾への追加設定（※reverse用）*/
+	.list-half.reverse h3::before {
+		transform: rotate(60deg);	/*回転角度*/
+	}
+
+	/*下のラインの装飾への追加設定*/
+	.list-half h3::after {
+		transform: rotate(60deg);	/*回転角度*/
+		margin-top: 0.5rem;			/*上に空けるスペース*/
+	}
+	
+	/*下のラインの装飾への追加設定（※reverse用）*/
+	.list-half.reverse h3::after {
+		transform: rotate(-60deg);	/*回転角度*/
+	}
+
+	/*h3テキスト内のアイコン*/
+	.list-half h3 i {
+		margin: 0;
+		margin-top: 0.5rem;	/*上に0.5文字分のマージンを空ける*/
+	}
+
+	/*テキストブロック*/
+	.list-half .text {
+		margin-bottom: 0;
+		flex: 1;
+		align-self: flex-start;	/*上寄せになります*/
+		margin-top: 8vw;		/*上寄せですが、この分だけ下に下げます。写真とテキストがななめに配置されるイメージで設定しました。*/
+		position: relative;
+		z-index: 1;
+		margin-right: -10vw;	/*この分だけ画像にテキストブロックが重なります。画面幅100%＝100vwです。*/
+		box-shadow: 2vw 2vw rgba(var(--primary-color-rgb), 0.1);	/*ボックスの影。右へ、下へ。色はcss冒頭のvar(primary-color-rgb)を読み込み、0.1で透明度も指定。*/
+	}
+	
+	/*テキストブロック（※reverse用）*/
+	.list-half.reverse .text {
+		margin-right: 0;
+		margin-left: -10vw;
+		box-shadow: -2vw 2vw rgba(var(--primary-color-rgb), 0.1);
+	}
+
+	/*画像ブロック*/
+	.list-half .image {
+		padding: 0;		/*余白をリセット*/
+		width: 50vw;	/*幅。画面の50%*/
+		border-radius: 3vw 0px 0px 3vw;	/*角を丸くする指定。左上、右上、右下、左下への順番。*/
+		overflow: hidden;
+	}
+	
+	/*画像ブロック（※reverse用）*/
+	.list-half.reverse .image {
+		border-radius: 0px 3vw 3vw 0px;
+	}
+
+	}/*追加指定ここまで*/
+	

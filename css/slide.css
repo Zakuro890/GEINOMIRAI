@@ -37,7 +37,7 @@
 
 /*２枚目画像*/
 .slide2 {
-	background: url('../img/30178921_s.jpg') no-repeat center center / cover;	/*２枚目の背景画像の読み込み*/
+	background: url('../img/330343327_s.jpg') no-repeat center center / cover;	/*２枚目の背景画像の読み込み*/
 	justify-content: flex-end;	/*テキストブロックを右寄せ*/
 }
 
@@ -58,8 +58,9 @@
 
 /*小さなテキスト*/
 #mainimg p {
-	font-size: 1.7vw;		/*文字サイズ。100vwは画面幅100%のことです*/
+	font-size: 2.7vw;		/*文字サイズ。100vwは画面幅100%のことです*/
 	padding-left: 0.5rem;	/*左に空ける余白。0.5文字分。*/
+	font-weight: 700;
 }
 
 
