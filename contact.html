@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせフォーム</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
     <style>
         .modal {
             display: none;
@@ -37,44 +37,231 @@
 </div>
 <!--/#menubar-->
 </header>
-<div class="flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
-        <h2 class="text-2xl font-semibold text-center mb-6">お問い合わせフォーム</h2>
-        <p class="text-center text-gray-600 mb-6">お問い合わせの方法は、以下のフォームよりご連絡ください。<br>担当者がメールにて返信し、各種対応をご連絡いたします。</p>
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSexnHISQwBFam8cuYEfRfRZNg_3Mrqc-5jGGvWN6Nc39uj5lA/formResponse" method="post">
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2" for="name">お名前 <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
-                <input type="text" id="name" name="name" placeholder="例：山田 太郎" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.1921497181" required>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2" for="phone">電話番号 <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
-                <input type="text" id="phone" name="phone" placeholder="例：01234567890（ハイフンなし）" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.11885088" required>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2" for="email">メールアドレス <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
-                <input type="email" id="email" name="email" placeholder="例：sample@sample.com" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.864046591" required>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-2" for="message">お問い合わせ内容 <span class="text-red-500 border border-red-500 px-1 text-xs">必須</span></label>
-                <textarea id="message" name="message" placeholder="ご自由にご記入ください" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="entry.1922750848" required></textarea>
-            </div>
-            <div class="mb-4">
-                <label class="flex items-center">
-                    <input type="checkbox" id="agree" class="form-checkbox h-5 w-5 text-blue-600">
-                    <span class="ml-2 text-gray-700 font-medium">個人情報取扱方針に同意する</span>
-                    <button type="button" class="ml-2 text-blue-500 underline focus:outline-none" onclick="openModal()">（確認する）</button>
-                </label>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 required">送信する</button>
-            </div>
-        </form>
-    </div>
+<style>
+  .contact-form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  .form-title {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  
+  .form-description {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+  }
+  
+  .form-group {
+      margin-bottom: 20px;
+  }
+  
+  .form-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #444;
+      font-weight: 500;
+  }
+  
+  .required {
+      background: #ff4757;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-left: 8px;
+  }
+  
+  .form-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.3s;
+  }
+  
+  .form-input:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 0 3px rgba(74,144,226,0.1);
+      outline: none;
+  }
+  
+  textarea.form-input {
+      min-height: 120px;
+      resize: vertical;
+  }
+  
+  .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
+  }
+  
+  .policy-button {
+      background: none;
+      border: none;
+      color: #4a90e2;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 0 4px;
+  }
+  
+  .submit-button {
+      display: block;
+      width: 200px;
+      margin: 30px auto 0;
+      padding: 12px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+  }
+  
+  .submit-button:hover {
+      background: #357abd;
+      transform: translateY(-2px);
+  }
+  
+  .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+      position: relative;
+      background: white;
+      width: 90%;
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+      max-height: 80vh;
+      overflow-y: auto;
+  }
+  
+  .modal-close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+  }
+  .form-input.error {
+    border-color: #ff4757;
+    background-color: #fff8f8;
+}
 
-   <!-- Modal -->
-<div id="modal" class="modal fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto overflow-auto max-h-screen">
-        <h3 class="text-xl font-semibold mb-4">個人情報取扱方針</h3>
+.error-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.error-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.error-content h3 {
+    color: #ff4757;
+    margin-bottom: 15px;
+}
+
+.error-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.error-content li {
+    color: #666;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.error-content button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  </style>
+  
+  <form id="contactForm" class="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSexnHISQwBFam8cuYEfRfRZNg_3Mrqc-5jGGvWN6Nc39uj5lA/formResponse" method="post">
+      <h2 class="form-title">お問い合わせフォーム</h2>
+      <p class="form-description">お問い合わせの方法は、以下のフォームよりご連絡ください。<br>担当者がメールにて返信し、各種対応をご連絡いたします。</p>
+      
+      <div class="form-group">
+          <label class="form-label" for="name">お名前 <span class="required">必須</span></label>
+          <input class="form-input" type="text" id="name" name="entry.1921497181" placeholder="例：山田 太郎" required>
+      </div>
+  
+      <div class="form-group">
+          <label class="form-label" for="phone">電話番号 <span class="required">必須</span></label>
+          <input class="form-input" type="tel" id="phone" name="entry.11885088" placeholder="例：01234567890（ハイフンなし）" required>
+      </div>
+  
+      <div class="form-group">
+          <label class="form-label" for="email">メールアドレス <span class="required">必須</span></label>
+          <input class="form-input" type="email" id="email" name="entry.864046591" placeholder="例：sample@sample.com" required>
+      </div>
+  
+      <div class="form-group">
+          <label class="form-label" for="message">お問い合わせ内容 <span class="required">必須</span></label>
+          <textarea class="form-input" id="message" name="entry.1922750848" placeholder="ご自由にご記入ください" required></textarea>
+      </div>
+  
+      <div class="checkbox-group">
+          <input type="checkbox" id="agree" required>
+          <label for="agree">個人情報取扱方針に同意する</label>
+          <button type="button" class="policy-button" onclick="openModal()">（確認する）</button>
+      </div>
+  
+      <button type="submit" class="submit-button">送信する</button>
+  </form>
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>個人情報取扱方針</h3>
         <p class="mb-4"><strong>1. 個人情報の収集について</strong><br>
         当サイトでは、お問い合わせフォームにGoogleフォームを使用しています。フォームをご利用いただく際に、以下の個人情報を収集する場合があります。
         <ul class="list-disc pl-5">
@@ -109,7 +296,7 @@
         <p class="mb-4"><strong>6. 個人情報の開示・訂正・削除について</strong><br>
         ご本人からの個人情報の開示、訂正、削除のご依頼があった場合は、速やかに対応いたします。具体的な手続きにつきましては、お問い合わせフォームからご連絡ください。
         </p>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="closeModal()">閉じる</button>
+        <button class="modal-close" onclick="closeModal()">閉じる</button>
     </div>
 </div>
 
@@ -117,46 +304,112 @@
 
 
 <script>
-        // フォームバリデーション
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-        // 必須項目チェック
-        var name = document.getElementById("name").value;
-        var phone = document.getElementById("phone").value;
-        var email = document.getElementById("email").value;
-        var emailConfirm = document.getElementById("email-confirm").value;
-        var message = document.getElementById("message").value;
-        var agree = document.getElementById("agree").checked;
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        if (!name || !phone || !email || !emailConfirm || !message || !agree) {
-            alert("全ての必須項目を入力し、個人情報取扱方針に同意してください。");
-            event.preventDefault();
-            return;
+    const form = {
+        name: {
+            value: document.getElementById("name").value.trim(),
+            pattern: /^[\u4e00-\u9faf\u3040-\u309f\u30a0-\u30ff\sa-zA-Z]+$/,
+            message: "お名前は文字のみ入力可能です"
+        },
+        phone: {
+            value: document.getElementById("phone").value.trim(),
+            pattern: /^[0-9]{10,11}$/,
+            message: "電話番号は10桁または11桁の数字で入力してください"
+        },
+        email: {
+            value: document.getElementById("email").value.trim(),
+            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message: "有効なメールアドレスを入力してください"
+        },
+        message: {
+            value: document.getElementById("message").value.trim(),
+            minLength: 10,
+            message: "お問い合わせ内容は10文字以上入力してください"
+        },
+        agree: {
+            value: document.getElementById("agree").checked,
+            message: "個人情報取扱方針への同意が必要です"
+        }
+    };
+
+    const errors = [];
+
+    // 必須チェック
+    for (const [key, field] of Object.entries(form)) {
+        const element = document.getElementById(key);
+        
+        // 値が空またはチェックボックスが未チェックの場合
+        if (!field.value || (key === 'agree' && !field.value)) {
+            const fieldName = key === 'agree' ? '個人情報取扱方針への同意' : 
+                            element.previousElementSibling.textContent.replace(' 必須', '');
+            errors.push(`${fieldName}は必須項目です`);
+            element.classList.add('error');
         }
 
-        // メールアドレス形式チェック
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            alert("有効なメールアドレスを入力してください。");
-            event.preventDefault();
-            return;
+        // パターンチェック
+        if (field.value && field.pattern && !field.pattern.test(field.value)) {
+            errors.push(field.message);
+            element.classList.add('error');
         }
 
-        // メールアドレス一致チェック
-        if (email !== emailConfirm) {
-            alert("メールアドレスが一致しません。");
-            event.preventDefault();
-            return;
+        // メッセージの長さチェック
+        if (key === 'message' && field.value && field.value.length < field.minLength) {
+            errors.push(field.message);
+            element.classList.add('error');
         }
+    }
+
+    if (errors.length > 0) {
+        showErrorModal(errors);
+        return false;
+    }
+
+    this.submit();
+});
+
+// エラーモーダル表示とリセット機能の追加
+function showErrorModal(errors) {
+    const existingModal = document.querySelector('.error-modal');
+    if (existingModal) existingModal.remove();
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-modal';
+    errorDiv.innerHTML = `
+        <div class="error-content">
+            <h3>入力エラー</h3>
+            <ul>${errors.map(error => `<li>${error}</li>`).join('')}</ul>
+            <button onclick="closeErrorModal(this)">閉じる</button>
+        </div>
+    `;
+    document.body.appendChild(errorDiv);
+}
+
+function closeErrorModal(button) {
+    button.closest('.error-modal').remove();
+}
+
+// 入力フィールドのエラー状態をリセット
+document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('input', function() {
+        this.classList.remove('error');
     });
-    function openModal() {
-        document.getElementById('modal').classList.add('show');
-        document.body.classList.add('no-scroll');
-    }
+});
 
-    function closeModal() {
-        document.getElementById('modal').classList.remove('show');
-        document.body.classList.remove('no-scroll');
-    }
+document.getElementById('agree').addEventListener('change', function() {
+    this.classList.remove('error');
+});
+
+function openModal() {
+    document.getElementById('modal').classList.add('show');
+    document.body.classList.add('no-scroll');
+}
+
+function closeModal() {
+    document.getElementById('modal').classList.remove('show');
+    document.body.classList.remove('no-scroll');
+}
 </script>
 <!--/#contents-->
 </div>
